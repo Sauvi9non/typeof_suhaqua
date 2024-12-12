@@ -1,3 +1,20 @@
+import evian from "./img/evian.png";
+import precisionist from "./img/precisionist.png";
+import purifiedWater from "./img/purifiedWater.png";
+import coughSyrup from "./img/coughSyrup.png";
+import tonicWater from "./img/tonicWater.png";
+import springWater from "./img/springWater.png"; 
+import deepOceanWater from "./img/deepOceanWater.png";
+import greenTea from "./img/greenTea.png";
+import coconutWater from "./img/coconutWater.png";
+import coffee from "./img/coffee.png";
+import holyWater from "./img/holyWater.png";
+import glassJar from "./img/glassjar.png";
+import idolWater from "./img/idolWater.png";
+import alcohol from "./img/alcohol.png";
+import treeSap from "./img/treeSap.png";
+import hotSpringWater from "./img/hotSpring.png";
+
 export enum QuestionType {
     ei = "EI",
     ns = "NS",
@@ -252,4 +269,18 @@ export const questions: Question[] = [
             }
         ]
     },    
+]
+
+const resultImgs = [
+    evian,    precisionist,    purifiedWater,    coughSyrup,
+    tonicWater,    springWater,    deepOceanWater,    greenTea,
+    coconutWater,    coffee,    holyWater,    glassJar,
+    idolWater,    alcohol,    treeSap,    hotSpringWater
+];
+
+export const results = [
+    {
+        resultImg: resultImgs[0],
+        explanation: "와랄랄라",
+    }
 ]

@@ -1,9 +1,15 @@
 import styled from "styled-components";
 import { useNavigate } from "react-router-dom";
+import { questions } from "../assets/types";
 
 const Wrapper = styled.div`
-
-`;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+`
 
 const Form = styled.form`
     display: flex;
@@ -48,14 +54,16 @@ function TestPage(){
     return(
         <Wrapper>
             <Form onSubmit={gotoResult}>
-                
-            <Question>여기에는 어쩌다가 들어오게 되었니?</Question>
-
-            <Answer id="a" type="radio" onClick={gotoNext} ></Answer>
-            <label htmlFor="a" >버추얼 세계의 신비로운 힘에 의해</label>
-
-            <Answer id="b" type="radio" onClick={gotoNext} ></Answer>
-            <label htmlFor="b">수하가 쿠팡에서 시켰어</label>
+            <h1>{questions[3].id}</h1>
+            <Question>{questions[3].text}</Question>
+            {
+                questions[3].options.map((option,i)=> (
+                    <div key={i}>
+                        <Answer id={option.type} type="radio" onClick={gotoNext} value={option.type}></Answer>
+                        <label htmlFor={option.type}>{option.text}</label>
+                    </div>
+                ))
+            }
 
             <Submit type="submit" value="결과보기"></Submit>
             </Form>

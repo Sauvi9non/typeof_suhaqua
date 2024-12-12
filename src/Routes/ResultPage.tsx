@@ -1,12 +1,19 @@
 import styled from "styled-components";
 import { useNavigate } from "react-router-dom";
+import { results } from "../assets/types";
+import { MBTI } from "../assets/types";
 
 const Wrapper = styled.div`
-
-`;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+`
 
 const Image = styled.img`
-
+    width: 200px;
 `;
 
 const Explanation = styled.p`
@@ -45,17 +52,21 @@ const Share = styled.button`
     }
 `
 
+
 function ResultPage(){
     const navigate = useNavigate();
 
     const goToMain = () => {
         navigate("/");
     }
+    const answer = "ENTJ";
+    const result: MBTI = MBTI[answer as keyof typeof MBTI];
 
     return(
         <Wrapper>
-            <Image></Image>
-            <Explanation></Explanation>
+            <h1>{result}</h1>
+            <Image src={results[0].resultImg}></Image>
+            <Explanation>{results[0].explanation}</Explanation>
             <Retry onClick={goToMain}>다시하기</Retry>
             <Share>공유하기</Share>
         </Wrapper>
