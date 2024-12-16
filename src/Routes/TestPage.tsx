@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import { useNavigate } from "react-router-dom";
-import { questions } from "../assets/types";
+import { AnswerType, questions } from "../assets/types";
+import { useState } from "react";
 
 const Wrapper = styled.div`
     width: 100%;
@@ -42,32 +43,45 @@ const Submit = styled.input`
 `
 
 function TestPage(){
-    const navigate = useNavigate();
-    const gotoNext = () => {
-        alert("gotoNext");
-    }
+    const [index, setIndex] = useState<number>(0); // 0 ~ 11
+    //const [mbti, setMBTI] = useState(); //답변 결과 저장할 상태
 
+    const navigate = useNavigate();
+    const gotoNext = (e:React.MouseEvent<HTMLInputElement>) => {
+        console.log(`${e.currentTarget.value}`);
+        // calculateMBTI({e.currentTarget.value});
+        if(index > 11 && index < 0) return ;
+        setIndex(index+1);
+    }
     const gotoResult = () => {
         navigate("/result");
     }
 
+    // const calculateMBTI = (e:React.MouseEvent<HTMLInputElement>) => {
+    //     //mbti계산
+    //     //E, N, T, J면 +
+    //     //I, S, F, P 면 -
+    //     const choice:AnswerType = e.currentTarget.value as AnswerType;
+
+    // }
+
     return(
         <Wrapper>
             <Form onSubmit={gotoResult}>
-            <h1>{questions[3].id}</h1>
-            <Question>{questions[3].text}</Question>
-            {
-                questions[3].options.map((option,i)=> (
-                    <div key={i}>
-                        <Answer id={option.type} type="radio" onClick={gotoNext} value={option.type}></Answer>
-                        <label htmlFor={option.type}>{option.text}</label>
-                    </div>
-                ))
-            }
+                <Question>{questions[index].id}. {questions[index].text}</Question>
+                {
+                    questions[index].options.map((option,i)=> (
+                        <div key={i}>
+                            <Answer id={option.type} type="radio" onClick={index == 11 ? gotoResult : gotoNext} value={option.type}></Answer>
+                            <label htmlFor={option.type}>{option.text}</label>
+                        </div>
+                    ))
+                }
 
-            <Submit type="submit" value="결과보기"></Submit>
+                {
+                    index === 11 ? <Submit type="submit" value="결과보기"></Submit> : null
+                }
             </Form>
-
         </Wrapper>
     );
 }
