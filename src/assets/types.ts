@@ -22,15 +22,15 @@ export enum QuestionType {
     pj = "PJ"
 }
 
-export enum AnswerType {
-    e = "E",
-    i = "I",
-    n = "N",
-    s = "S",
-    t = "T",
-    f = "F",
-    p = "P",
-    j = "J"
+export const AnswerType = {
+    e : 1,
+    i : -1,
+    n : 1,
+    s: -1,
+    t: 1,
+    f: -1,
+    p: 1,
+    j: -1
 }
 
 export type Question = {
@@ -42,26 +42,7 @@ export type Question = {
 
 export type Answer = {
     text: string;
-    type: AnswerType;
-}
-
-export enum MBTI {
-    ENTJ = "프랑스 빙하수",
-    ESTJ = "깐깐한 물",
-    INTJ = "정제수",
-    ISTJ = "물약",
-    ENTP = "토닉 워터",
-    ESTP = "약수",
-    INTP = "해양심층수",
-    ISTP = "녹차",
-    ENFJ = "코코넛 워터",
-    ESFJ = "커피",
-    INFJ = "성수",
-    ISFJ = "0몬트 보리차",
-    ENFP = "아이돌물",
-    ESFP = "소주",
-    INFP = "고로쇠 수액",
-    ISFP = "온천수"
+    type: number;
 }
 
 export const questions: Question[] = [
@@ -278,9 +259,42 @@ const resultImgs = [
     idolWater,    alcohol,    treeSap,    hotSpringWater
 ];
 
-export const results = [
-    {
-        resultImg: resultImgs[0],
-        explanation: "와랄랄라",
-    }
-]
+export const results = {
+    "ENTJ" : {"name":"프랑스 빙하수", "image": resultImgs[0], "explanation": "동해물과백두산이마르고 닳도록 하느님이 보우하사 우리나라 만세 무궁화 삼천리 화려강산 대한사람 대한으로 길이 보전하세"},
+    "ESTJ" : {"name":"깐깐한 물", "image": resultImgs[1] , "explanation": "동해물과백두산이마르고 닳도록 하느님이 보우하사 우리나라 만세 무궁화 삼천리 화려강산 대한사람 대한으로 길이 보전하세"},
+    "INTJ" : {"name":"정제수", "image": resultImgs[2] , "explanation" : "동해물과백두산이마르고 닳도록 하느님이 보우하사 우리나라 만세 무궁화 삼천리 화려강산 대한사람 대한으로 길이 보전하세"},
+    "ISTJ" : {"name":"물약", "image": resultImgs[3] , "explanation" : "동해물과백두산이마르고 닳도록 하느님이 보우하사 우리나라 만세 무궁화 삼천리 화려강산 대한사람 대한으로 길이 보전하세"},
+
+    "ENTP" : {"name":"토닉 워터", "image": resultImgs[4] , "explanation" : "동해물과백두산이마르고 닳도록 하느님이 보우하사 우리나라 만세 무궁화 삼천리 화려강산 대한사람 대한으로 길이 보전하세"},
+    "ESTP" : {"name":"약수", "image": resultImgs[5] , "explanation" : "동해물과백두산이마르고 닳도록 하느님이 보우하사 우리나라 만세 무궁화 삼천리 화려강산 대한사람 대한으로 길이 보전하세"},
+    "INTP" : {"name":"해양심층수", "image": resultImgs[6] , "explanation" : "동해물과백두산이마르고 닳도록 하느님이 보우하사 우리나라 만세 무궁화 삼천리 화려강산 대한사람 대한으로 길이 보전하세"},
+    "ISTP" : {"name":"녹차", "image": resultImgs[7] , "explanation" : "동해물과백두산이마르고 닳도록 하느님이 보우하사 우리나라 만세 무궁화 삼천리 화려강산 대한사람 대한으로 길이 보전하세"},
+
+    "ENFJ" : {"name":"코코넛 워터", "image": resultImgs[8] , "explanation" : "동해물과백두산이마르고 닳도록 하느님이 보우하사 우리나라 만세 무궁화 삼천리 화려강산 대한사람 대한으로 길이 보전하세"},
+    "ESFJ" : {"name":"커피", "image": resultImgs[9] , "explanation" : "동해물과백두산이마르고 닳도록 하느님이 보우하사 우리나라 만세 무궁화 삼천리 화려강산 대한사람 대한으로 길이 보전하세"},
+    "INFJ" : {"name":"성수", "image": resultImgs[10] , "explanation" : "동해물과백두산이마르고 닳도록 하느님이 보우하사 우리나라 만세 무궁화 삼천리 화려강산 대한사람 대한으로 길이 보전하세"},
+    "ISFJ" : {"name":"0몬트 보리차", "image": resultImgs[11] , "explanation" : "동해물과백두산이마르고 닳도록 하느님이 보우하사 우리나라 만세 무궁화 삼천리 화려강산 대한사람 대한으로 길이 보전하세"},
+
+    "ENFP" : {"name":"아이돌물", "image": resultImgs[12] , "explanation" : "동해물과백두산이마르고 닳도록 하느님이 보우하사 우리나라 만세 무궁화 삼천리 화려강산 대한사람 대한으로 길이 보전하세"},
+    "ESFP" : {"name":"소주", "image": resultImgs[13] , "explanation" : "동해물과백두산이마르고 닳도록 하느님이 보우하사 우리나라 만세 무궁화 삼천리 화려강산 대한사람 대한으로 길이 보전하세"},
+    "INFP" : {"name":"고로쇠 수액", "image": resultImgs[14] , "explanation" : "동해물과백두산이마르고 닳도록 하느님이 보우하사 우리나라 만세 무궁화 삼천리 화려강산 대한사람 대한으로 길이 보전하세"},
+    "ISFP" : {"name":"온천수", "image": resultImgs[15] , "explanation" : "동해물과백두산이마르고 닳도록 하느님이 보우하사 우리나라 만세 무궁화 삼천리 화려강산 대한사람 대한으로 길이 보전하세"}
+}
+
+export type MBTI =
+"ENTJ" | 
+"ESTJ" | 
+"INTJ" | 
+"ISTJ" | 
+"ENTP" | 
+"ESTP" | 
+"INTP" | 
+"ISTP" | 
+"ENFJ" | 
+"ESFJ" | 
+"INFJ" | 
+"ISFJ" | 
+"ENFP" | 
+"ESFP" | 
+"INFP" | 
+"ISFP"

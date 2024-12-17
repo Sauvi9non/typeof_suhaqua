@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { useNavigate } from "react-router-dom";
-import { AnswerType, questions } from "../assets/types";
+import { questions, QuestionType } from "../assets/types";
 import { useState } from "react";
 
 const Wrapper = styled.div`
@@ -31,55 +31,70 @@ const Answer = styled.input`
     color: black;
     display: none;
 `
-
-const Submit = styled.input`
-    width: 30%;
-    padding: 10px 20px;
-    font-size: 2rem;
-    background-color: white;
-    color: black;
-    border-radius: 30px;
-    outline: none;
-`
-
 function TestPage(){
     const [index, setIndex] = useState<number>(0); // 0 ~ 11
-    //const [mbti, setMBTI] = useState(); //답변 결과 저장할 상태
+    const [mbti, setMBTI] = useState({EI: 0, NS: 0, TF: 0, PJ: 0}); //답변 결과 저장할 상태
 
     const navigate = useNavigate();
-    const gotoNext = (e:React.MouseEvent<HTMLInputElement>) => {
-        console.log(`${e.currentTarget.value}`);
-        // calculateMBTI({e.currentTarget.value});
-        if(index > 11 && index < 0) return ;
-        setIndex(index+1);
-    }
-    const gotoResult = () => {
-        navigate("/result");
+
+    const updateMBTI = (e:React.MouseEvent<HTMLInputElement>) => {
+        // 버튼 클릭 시 폼 제출 방지
+        if (e.currentTarget.type === "submit") {
+            e.preventDefault(); // submit 버튼의 기본 동작 방지
+        }
+        const score = Number(e.currentTarget.value); // 1이거나 -1
+        
+        //현재 인덱스의 questionTYPE에 따라서,
+        switch(questions[index].type) {
+            case QuestionType.ei:
+                setMBTI((prevMBTI)=> ({
+                    ...prevMBTI,
+                    EI : prevMBTI.EI + score
+                }));
+                break;
+            case QuestionType.ns:
+                setMBTI((prevMBTI)=> ({
+                    ...prevMBTI,
+                    NS : prevMBTI.NS + score
+                }));
+                break;
+            case QuestionType.tf:
+                setMBTI((prevMBTI)=> ({
+                    ...prevMBTI,
+                    TF : prevMBTI.TF + score
+                }));
+                break;
+            case QuestionType.pj:
+                setMBTI((prevMBTI)=> ({
+                    ...prevMBTI,
+                    PJ : prevMBTI.PJ + score
+                }));
+                break;
+            default:
+                console.log("something was wrong");
+                break;
+        }
+
+        //그리고 index 처리
+        if(index < 11) setIndex(index+1); //마지막 페이지가 아니면
     }
 
-    // const calculateMBTI = (e:React.MouseEvent<HTMLInputElement>) => {
-    //     //mbti계산
-    //     //E, N, T, J면 +
-    //     //I, S, F, P 면 -
-    //     const choice:AnswerType = e.currentTarget.value as AnswerType;
-
-    // }
+    const sendMBTI = (e:React.FormEvent<HTMLFormElement>) => {
+        e.preventDefault();
+        navigate("/result", {state:mbti});
+    }
 
     return(
         <Wrapper>
-            <Form onSubmit={gotoResult}>
+            <Form onSubmit={sendMBTI} method="get">
                 <Question>{questions[index].id}. {questions[index].text}</Question>
                 {
                     questions[index].options.map((option,i)=> (
                         <div key={i}>
-                            <Answer id={option.type} type="radio" onClick={index == 11 ? gotoResult : gotoNext} value={option.type}></Answer>
-                            <label htmlFor={option.type}>{option.text}</label>
+                            <Answer id={String(option.type)} type={ index == 11 ? "submit" : "radio"} onClick={updateMBTI} value={option.type}></Answer>
+                            <label htmlFor={String(option.type)}>{option.text}</label>
                         </div>
                     ))
-                }
-
-                {
-                    index === 11 ? <Submit type="submit" value="결과보기"></Submit> : null
                 }
             </Form>
         </Wrapper>
