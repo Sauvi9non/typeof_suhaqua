@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { useNavigate } from "react-router-dom";
 import { questions, QuestionType } from "../assets/types";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 const Wrapper = styled.div`
     width: 100%;
@@ -83,6 +83,10 @@ function TestPage(){
         e.preventDefault();
         navigate("/result", {state:mbti});
     }
+
+    useEffect(()=>{
+        setMBTI({EI: 0, NS: 0, TF: 0, PJ: 0});
+    },[mbti]);
 
     return(
         <Wrapper>
