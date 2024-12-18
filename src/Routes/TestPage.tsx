@@ -86,7 +86,7 @@ function TestPage(){
 
     useEffect(()=>{
         setMBTI({EI: 0, NS: 0, TF: 0, PJ: 0});
-    },[mbti]);
+    },[]);
 
     return(
         <Wrapper>

@@ -69,18 +69,18 @@ function ResultPage(){
     }
 
     const shareTwitter = () => {
-        const text = "xppxmxm"; //`{results[result].name} {results[result].explanation}`
-        const url = "www.naver.com";
-        window.open(`https://www.twitter.com/intent?text={text}&url={url}`);
+        const text = `${results[result].name} ${results[result].explanation}`
+        const url = `www.youtube.com`;
+        window.open(`https://twitter.com/intent/tweet?text=${text}&url=${url}`);
     }
-
     return(
         <Wrapper>
             <h1>{results[result].name}</h1>
             <Image src={results[result].image}></Image>
             <Explanation>{results[result].explanation}</Explanation>
             <Retry onClick={goToMain}>다시하기</Retry>
-            <Share onClick={shareTwitter}>공유하기</Share>
+            <Share className="twitter-share-button" onClick={shareTwitter}>공유하기</Share>
+            
         </Wrapper>
     );
 }
