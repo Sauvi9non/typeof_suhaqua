@@ -2,17 +2,10 @@ import styled from "styled-components";
 import { useNavigate } from "react-router-dom";
 import { questions, QuestionType } from "../assets/types";
 import { useState, useEffect } from "react";
-
-const Wrapper = styled.div`
-    width: 100%;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    align-items: center;
-`
+import { Wrapper } from "../assets/styles";
 
 const Form = styled.form`
+    width: 100%
     display: flex;
     justify-content: center;
     flex-direction: column;
@@ -23,14 +16,26 @@ const Question = styled.span`
     font-weight: 400;
 `;
 
-const Answer = styled.input`
-    width: 30%;
+const AnswerWrapper = styled.div`
+    width: 100%;
     padding: 10px 20px;
     margin: 20px;
     border-radius: 10px;
-    color: black;
+
+    &:hover {
+        background-color: lightgray;
+        cursor: pointer;
+    }
+`;
+
+const AnswerInput = styled.input`
     display: none;
 `
+
+const AnswerLabel = styled.label`
+    color: black;
+`;
+
 function TestPage(){
     const [index, setIndex] = useState<number>(0); // 0 ~ 11
     const [mbti, setMBTI] = useState({EI: 0, NS: 0, TF: 0, PJ: 0}); //답변 결과 저장할 상태
@@ -94,10 +99,10 @@ function TestPage(){
                 <Question>{questions[index].id}. {questions[index].text}</Question>
                 {
                     questions[index].options.map((option,i)=> (
-                        <div key={i}>
-                            <Answer id={String(option.type)} type={ index == 11 ? "submit" : "radio"} onClick={updateMBTI} value={option.type}></Answer>
-                            <label htmlFor={String(option.type)}>{option.text}</label>
-                        </div>
+                        <AnswerWrapper key={i} onClick={updateMBTI}>
+                            <AnswerInput id={String(option.type)} type={ index == 11 ? "submit" : "radio"} value={option.type}></AnswerInput>
+                            <AnswerLabel htmlFor={String(option.type)}>{option.text}</AnswerLabel>
+                        </AnswerWrapper>
                     ))
                 }
             </Form>

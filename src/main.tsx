@@ -4,6 +4,7 @@ import { createBrowserRouter, RouterProvider} from 'react-router-dom'
 import MainPage  from "./Routes/MainPage";
 import TestPage from "./Routes/TestPage";
 import ResultPage from "./Routes/ResultPage";
+import { GlobalStyle } from './assets/styles';
 
 const router = createBrowserRouter([
   {
@@ -23,6 +24,7 @@ const router = createBrowserRouter([
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
+    <GlobalStyle />
     <RouterProvider router={router} />
   </StrictMode>
 )
