@@ -29,7 +29,7 @@ function ResultPage(){
 
     const shareTwitter = () => {
         const text = `${results[result].name} ${results[result].explanation}`
-        const url = `www.youtube.com`;
+        const url = `https://typeof-suhaqua.web.app`;
         window.open(`https://twitter.com/intent/tweet?text=${text}&url=${url}`);
     }
     return(
