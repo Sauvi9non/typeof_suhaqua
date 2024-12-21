@@ -48,7 +48,7 @@ export type Answer = {
 export const questions: Question[] = [
     {
         "id" : 1,
-        "text" : "수하 침대 밑에는 어쩌다가 오게 되었니?",
+        "text" : "수하 침대 밑에는 어쩌다가 오게 되었어?",
         "type" : QuestionType.ns,
         "options" : [
             {
@@ -56,13 +56,36 @@ export const questions: Question[] = [
                 "type" : AnswerType.s
             },
             {
-                "text" : "밖에서 몰래 사사삭 들어왔어",
+                "text" : "밖에서 몰래 사사삭하고 ",
                 "type" : AnswerType.n
             }
         ]
     },
     {
         "id" : 2,
+        "text" : "지내는 건 주로 어디서 지내?",
+        "type" : QuestionType.ei,
+        "options" : [
+            {
+                "text" : "침대 밑에서 안 나가고 있는 편",
+                "type" : AnswerType.i
+            },
+            {
+                "text" : "수하 책상 위!",
+                "type" : AnswerType.e
+            },
+            {
+                "text" : "냉장고일까나...",
+                "type" : AnswerType.i
+            },
+            {
+                "text" : "맨날 굴러다녀서 글쎄?",
+                "type" : AnswerType.e
+            }
+        ]
+    },
+    {
+        "id" : 3,
         "text" : "평소에는 뭐하고 있어?",
         "type" : QuestionType.ei,
         "options" : [
@@ -71,7 +94,7 @@ export const questions: Question[] = [
                 "type" : AnswerType.i
             },
             {
-                "text" : "수하 관찰",
+                "text" : "수하 관찰!",
                 "type" : AnswerType.i
             },
             {
@@ -79,56 +102,42 @@ export const questions: Question[] = [
                 "type" : AnswerType.e
             },
             {
-                "text" : "굴러다니는 게 내 일이야",
+                "text" : "수하 집 탐험!",
                 "type" : AnswerType.e
             }
         ]
     },
-    {
-        "id" : 3,
-        "text" : "방송 대기방이 생겼다! 그 때의 너는?",
-        "type" : QuestionType.pj,
-        "options" : [
-            {
-                "text" : "미리 들어가서 대기하고 있는다!",
-                "type" : AnswerType.j
-            },
-            {
-                "text" : "대강 방송 시간 맞춰서 들어간다",
-                "type" : AnswerType.p
-            },
-        ]
-    },
+
     {
         "id" : 4,
         "text" : "수하가 방송하고 있을 때의 너는?",
         "type" : QuestionType.ei,
         "options" : [
             {
-                "text" : "옆에서 같이 재잘재잘 떠들어",
+                "text" : "옆에서 같이 떠들어!",
                 "type" : AnswerType.e
             },
             {
-                "text" : "수줍게 바라만 보고 있어",
+                "text" : "그냥 수하 방송하는 거 조용히 지켜봐",
                 "type" : AnswerType.i
             },
             {
-                "text" : "미안...나 사실 옆에서 딴 짓 많이 해...",
+                "text" : "수하 바보털을 호시탐탐 노리는 중",
                 "type" : AnswerType.e
             },
             {
-                "text" : "다른 수하쿠아들 반응 따라하는 것 같아",
+                "text" : "미안...나 사실 옆에서 딴 짓 많이 해...",
                 "type" : AnswerType.i
             }
         ]
     },
     {
         "id" : 5,
-        "text" : "어디선가 민소리가 들려온다",
+        "text" : "어디선가 민소리가 들려온다.",
         "type" : QuestionType.tf,
         "options" : [
             {
-                "text" : "민소리에 한 술 더 뜬다",
+                "text" : "민소리에 한 술 더 뜨는 편",
                 "type" : AnswerType.f
             },
             {
@@ -139,117 +148,126 @@ export const questions: Question[] = [
     },
     {
         "id" : 6,
-        "text" : "수하가 스토리라인이 있는 게임을 할 때 나는?",
-        "type" : QuestionType.ns,
+        "text" : "수하가 집을 오래 비우게 되어서 미안하다고 한다.",
+        "type" : QuestionType.tf,
         "options" : [
             {
-                "text" : "수하가 어떻게 하는 지 반응을 본다",
-                "type" : AnswerType.s
+                "text" : "괜찮아 우리 걱정은 말구 조심히 잘 갔다와!",
+                "type" : AnswerType.f
             },
             {
-                "text" : "나름대로 이야기의 결말과 단서 등을 같이 추측해본다",
-                "type" : AnswerType.n
-            }
+                "text" : "미안하면 올 때 고양ㅇ...가 아니라 메로나! ^^7",
+                "type" : AnswerType.t
+            },
         ]
     },
     {
         "id" : 7,
-        "text" : "오랜만에 대사요청 데이가 돌아왔다! 내가 당첨된다면 수하한테 부탁하고픈 대사는...",
+        "text" : "수하가 없는 집은...",
         "type" : QuestionType.tf,
         "options" : [
             {
-                "text" : "멋지고 근엄하고 애절하고 아무튼 멋진 대사!",
-                "type" : AnswerType.f
+                "text" : "우리 꺼다!!!!!!!!!!!!!>ㅁ<",
+                "type" : AnswerType.t
             },
             {
-                "text" : "나는 어둠의 개그단입니다. 이 때를 기다려왔습니다.",
-                "type" : AnswerType.t
+                "text" : "쓸쓸해...8ㅅ8",
+                "type" : AnswerType.f
             }
         ]
     },
     {
         "id" : 8,
-        "text" : "수하가 집을 오래 비우게 되었다",
-        "type" : QuestionType.tf,
+        "text" : "수하가 돌아올 때까지 뭘 할까?",
+        "type" : QuestionType.pj,
         "options" : [
             {
-                "text" : "잘 다녀와~(이제 이 집은 제껍니다.)",
-                "type" : AnswerType.t
+                "text" : "잘들어봐우리는물부족이일어나면큰일나니까오늘은지난방송아카이브를돌려보자일단내가임의로몇가지리스트를뽑아놨는데...",
+                "type" : AnswerType.j
             },
             {
-                "text" : "잘...다녀와...(여행가방 안에 몰래 들어간다.)",
-                "type" : AnswerType.f
+                "text" : "위의 의견에 따른다",
+                "type" : AnswerType.p
             }
         ]
     },
     {
         "id" : 9,
-        "text" : "넘어졌는데 뚜껑이 덜 닫혀서 바닥에 물을 쏟아버렸다!",
-        "type" : QuestionType.pj,
+        "text" : "오랜만에 지난 방송들을 돌려보니 어쩐지 많은 생각들이 떠오른다",
+        "type" : QuestionType.ns,
         "options" : [
             {
-                "text" : "주변에 빈 컵을 두고, 집에 돌아온 수하가 컵을 차도록 유도, 수하가 쏟은 것처럼 현장을 조작한다.",
-                "type" : AnswerType.j
+                "text" : "우리들은 지금 어디를 향해 가고 있는 걸까?",
+                "type" : AnswerType.n
             },
             {
-                "text" : "물이니까 수하가 오기 전에 증발하겠지...? 그대로 둔다",
-                "type" : AnswerType.p
+                "text" : "글쎄 나는 부둣가에 가서 새우깡이나 좀 얻어 먹으려고",
+                "type" : AnswerType.s
             },
             {
-                "text" : "내, 내가 한 거 아냐... 발뺌한다",
-                "type" : AnswerType.p
+                "text" : "내 말은 그게 아니라~ 먼 미래에서 생각했을 때 이 상황은 어떤 결과로 이어지는 걸까? 이 길의 끝은 어디지?",
+                "type" : AnswerType.n
             },
             {
-                "text" : "침대 밑의 주황 양말로 물기를 닦은 다음에 아무일 없던 척 한다.",
-                "type" : AnswerType.j
+                "text" : "난 그래도 부둣가에 가서 새우깡 좀 얻어 먹어야 한다고 생각해",
+                "type" : AnswerType.s
             }
         ]
     },
     {
         "id" : 10,
-        "text" : "침대 밑에서 행운의 주황 양말을 발견하면 뭐할거야?",
-        "type" : QuestionType.ns,
+        "text" : "일정 중에는 행운의 주황 양말 찾기도 있었다. 어디부터 둘러봐야 할까?",
+        "type" : QuestionType.pj,
         "options" : [
             {
-                "text" : "진짜 행운을 가져다 주는지 궁금하니까 가챠 돌려볼래",
-                "type" : AnswerType.s
+                "text" : "음...일단 가장 가까운 침대 밑부터 가볼까?",
+                "type" : AnswerType.p
             },
             {
-                "text" : "이게 그 행운의 주황 양말...! 온갖 행복한 상상에 빠진다.",
-                "type" : AnswerType.n
+                "text" : "행운의 주황 양말도 양말! 좀 멀지만 옷장부터 가볼래!",
+                "type" : AnswerType.j
             }
         ]
     },
     {
         "id" : 11,
-        "text" : "침대 밑에 있다보니 다른 라이버와의 합방 소식을 엿듣게 되었다. 그렇다는 건 수하쿠아들이랑 비슷하지만 다른 존재들과 만나게 된다는 뜻이겠지?",
-        "type" : QuestionType.ei,
+        "text" : "주황 양말을 들고 돌아가다가 그만 넘어져서 물이 쏟아지고 말았다.",
+        "type" : QuestionType.pj,
         "options" : [
             {
-                "text" : "어떤 분들일까? 새로운 만남은 언제나 설레!",
-                "type" : AnswerType.e
+                "text" : "어쩔 수 없다. 우선 주황 양말로 닦는다",
+                "type" : AnswerType.p
             },
             {
-                "text" : "너무 긴장돼...! 말 걸면 뭐라고 답해야 하지...?",
-                "type" : AnswerType.i
+                "text" : "왜 뚜껑이 덜 닫혀있었지?! 예상치 못한 상황에 당황한다.",
+                "type" : AnswerType.j
+            },
+            {
+                "text" : "물이니까 증발하겠지...! 외면한다",
+                "type" : AnswerType.p
+            },
+            {
+                "text" : "쏟아진 물을 다시 담는 법을 배워두길 잘했어...노련하게 상황을 수습한다",
+                "type" : AnswerType.j
             }
         ]
     },
     {
         "id" : 12,
-        "text" : "이제 슬슬 연말이다. 연말 계획은?",
-        "type" : QuestionType.pj,
+        "text" : "곧 있으면 수하가 돌아올 시간! 문앞에 마중 나가있자!",
+        "type" : QuestionType.ns,
         "options" : [
             {
-                "text" : "끝내주게 숨쉬기",
-                "type" : AnswerType.p
+                "text" : "'수하 온닿ㅎㅎ'",
+                "type" : AnswerType.s
             },
             {
-                "text" : "29일에 누구 봤다가 30일에 누구 보고 31일에 보신각 갔다가 바로 동해선 타고 해돋이 보러...",
-                "type" : AnswerType.j
+                "text" : "'...설마 수하 우리 못 보고 실수로 밟지는 않겠지?'",
+                "type" : AnswerType.n
             }
         ]
-    },    
+    },
+
 ]
 
 const resultImgs = [
@@ -260,25 +278,25 @@ const resultImgs = [
 ];
 
 export const results = {
-    "ENTJ" : {"name":"프랑스 빙하수", "image": resultImgs[0], "explanation": "동해물과백두산이마르고 닳도록 하느님이 보우하사 우리나라 만세 무궁화 삼천리 화려강산 대한사람 대한으로 길이 보전하세"},
-    "ESTJ" : {"name":"깐깐한 물", "image": resultImgs[1] , "explanation": "동해물과백두산이마르고 닳도록 하느님이 보우하사 우리나라 만세 무궁화 삼천리 화려강산 대한사람 대한으로 길이 보전하세"},
-    "INTJ" : {"name":"정제수", "image": resultImgs[2] , "explanation" : "동해물과백두산이마르고 닳도록 하느님이 보우하사 우리나라 만세 무궁화 삼천리 화려강산 대한사람 대한으로 길이 보전하세"},
-    "ISTJ" : {"name":"물약", "image": resultImgs[3] , "explanation" : "동해물과백두산이마르고 닳도록 하느님이 보우하사 우리나라 만세 무궁화 삼천리 화려강산 대한사람 대한으로 길이 보전하세"},
+    "ENTJ" : {"name":"프랑스 빙하수", "image": resultImgs[0], "explanation": "온통 흑백인 광공하우스에서 탈출했다. 빙하가 녹아 생긴 수하쿠아이기에 미네랄이 풍부하다."},
+    "ESTJ" : {"name":"깐깐한 물", "image": resultImgs[1] , "explanation": "깐깐한 정수기에서 나온 깐깐한 물을 가진 수하쿠아."},
+    "INTJ" : {"name":"정제수", "image": resultImgs[2] , "explanation" : "모든 미네랄과 불순물이 걸러진 순수한 수하쿠아. 하지만 광기 100%도 순수라는 걸 잊지말자."},
+    "ISTJ" : {"name":"물약", "image": resultImgs[3] , "explanation" : "잔병치레가 잦은 수하가 걱정되어 찾아온 수하쿠아. 하지만 이 물약 수하쿠아가 딸기약일지 호박약일지는 아무도 모른다고 한다. (어쩌면 민트초코맛일지도)"},
 
-    "ENTP" : {"name":"토닉 워터", "image": resultImgs[4] , "explanation" : "동해물과백두산이마르고 닳도록 하느님이 보우하사 우리나라 만세 무궁화 삼천리 화려강산 대한사람 대한으로 길이 보전하세"},
-    "ESTP" : {"name":"약수", "image": resultImgs[5] , "explanation" : "동해물과백두산이마르고 닳도록 하느님이 보우하사 우리나라 만세 무궁화 삼천리 화려강산 대한사람 대한으로 길이 보전하세"},
-    "INTP" : {"name":"해양심층수", "image": resultImgs[6] , "explanation" : "동해물과백두산이마르고 닳도록 하느님이 보우하사 우리나라 만세 무궁화 삼천리 화려강산 대한사람 대한으로 길이 보전하세"},
-    "ISTP" : {"name":"녹차", "image": resultImgs[7] , "explanation" : "동해물과백두산이마르고 닳도록 하느님이 보우하사 우리나라 만세 무궁화 삼천리 화려강산 대한사람 대한으로 길이 보전하세"},
+    "ENTP" : {"name":"토닉 워터", "image": resultImgs[4] , "explanation" : "알코올이 함유된 수하쿠아랑 궁합이 좋다. 사이다랑 비교가 되어 슬프다고 하는 듯. 탄산이 들어있어서 마구 흔들면 마실 때 뚜껑이 날아갈 수 있으니 조심해야 한다."},
+    "ESTP" : {"name":"약수", "image": resultImgs[5] , "explanation" : "약수터의 마스코트였던 수하쿠아. 구수한 말투에 넉살이 좋다. 몸에 좋은 각종 미네랄을 함유하고 있다."},
+    "INTP" : {"name":"해양심층수", "image": resultImgs[6] , "explanation" : "기본적으로 바닷물이라 짠맛이 나지만 특별한 처리를 했기때문에 식수로도 음용이 가능하다."},
+    "ISTP" : {"name":"녹차", "image": resultImgs[7] , "explanation" : "찻잎이 우러난 수하쿠아. 어떤 찻잎을 넣느냐에 따라 갈색이 되기도 한다."},
 
-    "ENFJ" : {"name":"코코넛 워터", "image": resultImgs[8] , "explanation" : "동해물과백두산이마르고 닳도록 하느님이 보우하사 우리나라 만세 무궁화 삼천리 화려강산 대한사람 대한으로 길이 보전하세"},
-    "ESFJ" : {"name":"커피", "image": resultImgs[9] , "explanation" : "동해물과백두산이마르고 닳도록 하느님이 보우하사 우리나라 만세 무궁화 삼천리 화려강산 대한사람 대한으로 길이 보전하세"},
-    "INFJ" : {"name":"성수", "image": resultImgs[10] , "explanation" : "동해물과백두산이마르고 닳도록 하느님이 보우하사 우리나라 만세 무궁화 삼천리 화려강산 대한사람 대한으로 길이 보전하세"},
-    "ISFJ" : {"name":"0몬트 보리차", "image": resultImgs[11] , "explanation" : "동해물과백두산이마르고 닳도록 하느님이 보우하사 우리나라 만세 무궁화 삼천리 화려강산 대한사람 대한으로 길이 보전하세"},
+    "ENFJ" : {"name":"코코넛 워터", "image": resultImgs[8] , "explanation" : "머리에 코코넛을 쓰고 있는 수하쿠아. 침대 밑에서 몰래 댄스파티를 벌이는 주범. 내용물은 호불호가 갈리는 맛이지만 호불호 없이 귀엽다."},
+    "ESFJ" : {"name":"볶은 커피콩을 우린 물", "image": resultImgs[9] , "explanation" : "카페인을 많이 함유하고 있는 수하쿠아. 종류에 따라서는 우유나 설탕을 함유하기도 한다. 너무 많이 마시면 밤에 잠이 안올수 있지만 이 수하쿠아는 그냥 커피가 아니기에 괜찮다고 한다."},
+    "INFJ" : {"name":"성수", "image": resultImgs[10] , "explanation" : "본래는 그냥 평범한 소금물이었지만 축성을 받아 성수가 되었다. 기본적으로 온화하다. 하지만 잊지마세요. 이 수하쿠아는 실눈캐랍니다."},
+    "ISFJ" : {"name":"델몬트 보리차", "image": resultImgs[11] , "explanation" : "원래는 오렌지 주스를 담고 있었지만 지금은 각 한국 가정집에 보급되어 보리차를 담고 있는 수하쿠아. 튼튼하고 넉넉한 용량만큼 유한 성격을 가지고 있다."},
 
-    "ENFP" : {"name":"아이돌물", "image": resultImgs[12] , "explanation" : "동해물과백두산이마르고 닳도록 하느님이 보우하사 우리나라 만세 무궁화 삼천리 화려강산 대한사람 대한으로 길이 보전하세"},
-    "ESFP" : {"name":"소주", "image": resultImgs[13] , "explanation" : "동해물과백두산이마르고 닳도록 하느님이 보우하사 우리나라 만세 무궁화 삼천리 화려강산 대한사람 대한으로 길이 보전하세"},
-    "INFP" : {"name":"고로쇠 수액", "image": resultImgs[14] , "explanation" : "동해물과백두산이마르고 닳도록 하느님이 보우하사 우리나라 만세 무궁화 삼천리 화려강산 대한사람 대한으로 길이 보전하세"},
-    "ISFP" : {"name":"온천수", "image": resultImgs[15] , "explanation" : "동해물과백두산이마르고 닳도록 하느님이 보우하사 우리나라 만세 무궁화 삼천리 화려강산 대한사람 대한으로 길이 보전하세"}
+    "ENFP" : {"name":"아이돌물", "image": resultImgs[12] , "explanation" : "기본 수하쿠아에 녹차 티백, 레몬즙과 설탕이 들어간 수하쿠아. 붓기제거에 좋다고 해서 많은 KPOP 아이돌들이 즐겨 마신다고 한다."},
+    "ESFP" : {"name":"소주", "image": resultImgs[13] , "explanation" : "아직 5살인 수하의 침대 밑에 어떻게 들어오게 되었는지 의문인 수하쿠아. 빨간 뚜껑이라 더 주의가 필요하다."},
+    "INFP" : {"name":"고로쇠 수액", "image": resultImgs[14] , "explanation" : "몸에 좋은 고로쇠 수액을 담고 있는 수하쿠아. 특히 뼈 건강에 좋다고 한다. 자주 넘어지고 뭐 뿌수고 떨어뜨리는 수하가 걱정되어 스스로 찾아온 기특한 수하쿠아"},
+    "ISFP" : {"name":"온천수", "image": resultImgs[15] , "explanation" : "물병 안에 계란을 넣으면 온센타마고가 된다. 어느 온천수냐에 따라 효능과 효험이 다르다. 식용은 안되니 주의가 필요하다"}
 }
 
 export type MBTI =
