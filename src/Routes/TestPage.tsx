@@ -1,8 +1,8 @@
 import styled from "styled-components";
 import { useNavigate } from "react-router-dom";
 import { questions, QuestionType } from "../assets/types";
-import { useState, useEffect } from "react";
-import { Wrapper } from "../assets/styles";
+import { useState } from "react";
+import { Wrapper, EventButton } from "../assets/styles";
 
 const Form = styled.form`
     width: 100%
@@ -16,7 +16,15 @@ const Question = styled.span`
     font-weight: 400;
 `;
 
-const AnswerWrapper = styled.div`
+const AnswerInput = styled.input`
+    display: none;
+`
+
+const AnswerLabel = styled.label`
+    width: 100%;
+    margin: 20px;
+    color: black;
+    display: block;
     width: 100%;
     padding: 10px 20px;
     margin: 20px;
@@ -26,28 +34,18 @@ const AnswerWrapper = styled.div`
         background-color: lightgray;
         cursor: pointer;
     }
+
 `;
 
-const AnswerInput = styled.input`
-    display: none;
-`
-
-const AnswerLabel = styled.label`
-    color: black;
-`;
-
-function TestPage(){
+function TestPage(){ //여기서 계속 변하는 건 index와 mbti 클릭할 때 마다 바뀌면 계속해서 리렌더링이 일어난다.
     const [index, setIndex] = useState<number>(0); // 0 ~ 11
     const [mbti, setMBTI] = useState({EI: 0, NS: 0, TF: 0, PJ: 0}); //답변 결과 저장할 상태
 
     const navigate = useNavigate();
 
     const updateMBTI = (e:React.MouseEvent<HTMLInputElement>) => {
-        // 버튼 클릭 시 폼 제출 방지
-        if (e.currentTarget.type === "submit") {
-            e.preventDefault(); // submit 버튼의 기본 동작 방지
-        }
         const score = Number(e.currentTarget.value); // 1이거나 -1
+        console.log("updateMBTI, score, index" + score + index);
         
         //현재 인덱스의 questionTYPE에 따라서,
         switch(questions[index].type) {
@@ -81,17 +79,15 @@ function TestPage(){
         }
 
         //그리고 index 처리
-        if(index < 11) setIndex(index+1); //마지막 페이지가 아니면
+        if(index < 11) setIndex( (index) => index + 1 ); //마지막 페이지가 아니면
+        console.log("updateMBTI, mbti, index" + mbti + index);
     }
 
     const sendMBTI = (e:React.FormEvent<HTMLFormElement>) => {
+        console.log("sendMBTI" + mbti);
         e.preventDefault();
         navigate("/result", {state:mbti});
     }
-
-    useEffect(()=>{
-        setMBTI({EI: 0, NS: 0, TF: 0, PJ: 0});
-    },[]);
 
     return(
         <Wrapper>
@@ -99,12 +95,12 @@ function TestPage(){
                 <Question>{questions[index].id}. {questions[index].text}</Question>
                 {
                     questions[index].options.map((option,i)=> (
-                        <AnswerWrapper key={i} onClick={updateMBTI}>
-                            <AnswerInput id={String(option.type)} type={ index == 11 ? "submit" : "radio"} value={option.type}></AnswerInput>
-                            <AnswerLabel htmlFor={String(option.type)}>{option.text}</AnswerLabel>
-                        </AnswerWrapper>
+                            <AnswerLabel htmlFor={String(option.type)} key={i}>{option.text}
+                            <AnswerInput id={String(option.type)} type= "radio" value={option.type} onClick={updateMBTI}></AnswerInput>
+                            </AnswerLabel>
                     ))
                 }
+                { (index == 11) ? <EventButton type="submit">결과 보기</EventButton> : null}
             </Form>
         </Wrapper>
     );
