@@ -5,15 +5,15 @@ import { useState } from "react";
 import { Wrapper, EventButton } from "../assets/styles";
 
 const Form = styled.form`
-    width: 100%
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
+    text-align: center;
 `
 
 const Question = styled.span`
-    font-size: 2rem;
-    font-weight: 400;
+    font-size: 1.5rem;
+
+    @media (max-width: 576px) {
+        font-size: 1.25rem;
+    }
 `;
 
 const AnswerInput = styled.input`
@@ -22,20 +22,25 @@ const AnswerInput = styled.input`
 
 const AnswerLabel = styled.label`
     width: 100%;
-    margin: 20px;
     color: black;
-    display: block;
-    width: 100%;
     padding: 10px 20px;
-    margin: 20px;
     border-radius: 10px;
+    font-size: 1.25em;
 
     &:hover {
         background-color: lightgray;
         cursor: pointer;
     }
 
+    @media (max-width: 576px) {
+        font-size: 1rem;
+    } 
 `;
+
+const BoxItem = styled.div`
+    padding: 20px;
+    margin: 10px 0px;
+`
 
 function TestPage(){ //여기서 계속 변하는 건 index와 mbti 클릭할 때 마다 바뀌면 계속해서 리렌더링이 일어난다.
     const [index, setIndex] = useState<number>(0); // 0 ~ 11
@@ -92,14 +97,19 @@ function TestPage(){ //여기서 계속 변하는 건 index와 mbti 클릭할 �
     return(
         <Wrapper>
             <Form onSubmit={sendMBTI} method="get">
-                <Question>{questions[index].id}. {questions[index].text}</Question>
+                <Question>{questions[index].id} / 12 <br />{questions[index].text}</Question>
+                <div>
                 {
                     questions[index].options.map((option,i)=> (
+                            <BoxItem>
                             <AnswerLabel htmlFor={String(option.type)} key={i}>{option.text}
                             <AnswerInput id={String(option.type)} type= "radio" value={option.type} onClick={updateMBTI}></AnswerInput>
                             </AnswerLabel>
+                            </BoxItem>
                     ))
                 }
+                </div>
+                
                 { (index == 11) ? <EventButton type="submit">결과 보기</EventButton> : null}
             </Form>
         </Wrapper>

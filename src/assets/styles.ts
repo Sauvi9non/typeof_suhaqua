@@ -6,19 +6,27 @@ export const GlobalStyle = createGlobalStyle`
     padding: 0 0;
     font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Ubuntu, "Helvetica Neue", sans-serif;
     }
+    
+    body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100vh;
+    }
 `;
 
 export const Wrapper = styled.div` 
-    width: 500px;
+    width: 100%;
     height: 100vh;
     display: flex;
-    justify-content: center;
+    justify-content: space-evenly;
     flex-direction: column;
     align-items: center;
 `;
 
 export const EventButton = styled.button`
-    width: 30%;
+    width: 200px;
     padding: 10px 20px;
     font-size: 2rem;
     background-color: white;
@@ -30,5 +38,10 @@ export const EventButton = styled.button`
         background-color: lightgray;
         cursor: pointer;
         outline: none;
-    }   
+    }
+
+    @media (max-width: 576px) {
+        width: 150px;
+        font-size: 1rem;
+    } 
 `

@@ -254,11 +254,11 @@ export const questions: Question[] = [
     },
     {
         "id" : 12,
-        "text" : "곧 있으면 수하가 돌아올 시간! 문앞에 마중 나가있자!",
+        "text" : "곧 있으면 수하가 돌아올 시간! 문앞에 마중 나가있을 때 드는 생각은?",
         "type" : QuestionType.ns,
         "options" : [
             {
-                "text" : "'수하 온닿ㅎㅎ'",
+                "text" : "'수하 온닿ㅎㅎ 우리 기념품 사왔겠지?'",
                 "type" : AnswerType.s
             },
             {
@@ -278,23 +278,23 @@ const resultImgs = [
 ];
 
 export const results = {
-    "ENTJ" : {"name":"프랑스 빙하수", "image": resultImgs[0], "explanation": "온통 흑백인 광공하우스에서 탈출했다. 빙하가 녹아 생긴 수하쿠아이기에 미네랄이 풍부하다."},
+    "ENTJ" : {"name":"프랑스 빙하수", "image": resultImgs[0], "explanation": "온통 흑백인 광공하우스에서 탈출했다. 빙하가 녹아 생긴 수하쿠아이기에 미네랄이 풍부하다"},
     "ESTJ" : {"name":"깐깐한 물", "image": resultImgs[1] , "explanation": "깐깐한 정수기에서 나온 깐깐한 물을 가진 수하쿠아."},
-    "INTJ" : {"name":"정제수", "image": resultImgs[2] , "explanation" : "모든 미네랄과 불순물이 걸러진 순수한 수하쿠아. 하지만 광기 100%도 순수라는 걸 잊지말자."},
+    "INTJ" : {"name":"정제수", "image": resultImgs[2] , "explanation" : "모든 미네랄과 불순물이 걸러진 순수한 수하쿠아. 하지만 광기 100%도 순수라는 걸 잊지말자"},
     "ISTJ" : {"name":"물약", "image": resultImgs[3] , "explanation" : "잔병치레가 잦은 수하가 걱정되어 찾아온 수하쿠아. 하지만 이 물약 수하쿠아가 딸기약일지 호박약일지는 아무도 모른다고 한다. (어쩌면 민트초코맛일지도)"},
 
-    "ENTP" : {"name":"토닉 워터", "image": resultImgs[4] , "explanation" : "알코올이 함유된 수하쿠아랑 궁합이 좋다. 사이다랑 비교가 되어 슬프다고 하는 듯. 탄산이 들어있어서 마구 흔들면 마실 때 뚜껑이 날아갈 수 있으니 조심해야 한다."},
-    "ESTP" : {"name":"약수", "image": resultImgs[5] , "explanation" : "약수터의 마스코트였던 수하쿠아. 구수한 말투에 넉살이 좋다. 몸에 좋은 각종 미네랄을 함유하고 있다."},
-    "INTP" : {"name":"해양심층수", "image": resultImgs[6] , "explanation" : "기본적으로 바닷물이라 짠맛이 나지만 특별한 처리를 했기때문에 식수로도 음용이 가능하다."},
-    "ISTP" : {"name":"녹차", "image": resultImgs[7] , "explanation" : "찻잎이 우러난 수하쿠아. 어떤 찻잎을 넣느냐에 따라 갈색이 되기도 한다."},
+    "ENTP" : {"name":"토닉 워터", "image": resultImgs[4] , "explanation" : "알코올이 함유된 수하쿠아랑 궁합이 좋다. 사이다랑 비교가 되어 슬프다고 하는 듯. 탄산이 들어있어서 마구 흔들면 마실 때. 뚜껑이 날아갈 수 있으니 조심해야 한다"},
+    "ESTP" : {"name":"약수", "image": resultImgs[5] , "explanation" : "약수터의 마스코트였던 수하쿠아. 구수한 말투에 넉살이 좋다. 몸에 좋은 각종 미네랄을 함유하고 있다"},
+    "INTP" : {"name":"해양심층수", "image": resultImgs[6] , "explanation" : "기본적으로 바닷물이라 짠맛이 나지만. 특별한 처리를 했기 때문에 식수로도 음용이 가능하다"},
+    "ISTP" : {"name":"녹차", "image": resultImgs[7] , "explanation" : "찻잎이 우러난 수하쿠아. 어떤 찻잎을 넣느냐에 따라 갈색이 되기도 한다"},
 
-    "ENFJ" : {"name":"코코넛 워터", "image": resultImgs[8] , "explanation" : "머리에 코코넛을 쓰고 있는 수하쿠아. 침대 밑에서 몰래 댄스파티를 벌이는 주범. 내용물은 호불호가 갈리는 맛이지만 호불호 없이 귀엽다."},
-    "ESFJ" : {"name":"볶은 커피콩을 우린 물", "image": resultImgs[9] , "explanation" : "카페인을 많이 함유하고 있는 수하쿠아. 종류에 따라서는 우유나 설탕을 함유하기도 한다. 너무 많이 마시면 밤에 잠이 안올수 있지만 이 수하쿠아는 그냥 커피가 아니기에 괜찮다고 한다."},
-    "INFJ" : {"name":"성수", "image": resultImgs[10] , "explanation" : "본래는 그냥 평범한 소금물이었지만 축성을 받아 성수가 되었다. 기본적으로 온화하다. 하지만 잊지마세요. 이 수하쿠아는 실눈캐랍니다."},
-    "ISFJ" : {"name":"델몬트 보리차", "image": resultImgs[11] , "explanation" : "원래는 오렌지 주스를 담고 있었지만 지금은 각 한국 가정집에 보급되어 보리차를 담고 있는 수하쿠아. 튼튼하고 넉넉한 용량만큼 유한 성격을 가지고 있다."},
+    "ENFJ" : {"name":"코코넛 워터", "image": resultImgs[8] , "explanation" : "머리에 코코넛을 쓰고 있는 수하쿠아. 침대 밑에서 몰래 댄스파티를 벌이는 주범. 내용물은 호불호가 갈리는 맛이지만 호불호 없이 귀엽다"},
+    "ESFJ" : {"name":"볶은 커피콩을 우린 물", "image": resultImgs[9] , "explanation" : "카페인을 많이 함유하고 있는 수하쿠아. 종류에 따라서는 우유나 설탕을 함유하기도 한다. 너무 많이 마시면 밤에 잠이 안올수 있지만. 이 수하쿠아는 그냥 커피가 아니기에 괜찮다고 한다"},
+    "INFJ" : {"name":"성수", "image": resultImgs[10] , "explanation" : "본래는 그냥 평범한 소금물이었지만 축성을 받아 성수가 되었다. 기본적으로 온화하다. 하지만 이 수하쿠아는 실눈캐라는 걸 잊지 마시길"},
+    "ISFJ" : {"name":"델몬트 보리차", "image": resultImgs[11] , "explanation" : "원래는 오렌지 주스를 담고 있었지만 지금은 각 한국 가정집에 보급되어 보리차를 담고 있는 수하쿠아. 튼튼하고 넉넉한 용량만큼 유한 성격을 가지고 있다"},
 
-    "ENFP" : {"name":"아이돌물", "image": resultImgs[12] , "explanation" : "기본 수하쿠아에 녹차 티백, 레몬즙과 설탕이 들어간 수하쿠아. 붓기제거에 좋다고 해서 많은 KPOP 아이돌들이 즐겨 마신다고 한다."},
-    "ESFP" : {"name":"소주", "image": resultImgs[13] , "explanation" : "아직 5살인 수하의 침대 밑에 어떻게 들어오게 되었는지 의문인 수하쿠아. 빨간 뚜껑이라 더 주의가 필요하다."},
+    "ENFP" : {"name":"아이돌물", "image": resultImgs[12] , "explanation" : "기본 수하쿠아에 녹차 티백, 레몬즙과 설탕이 들어간 수하쿠아. 붓기제거에 좋다고 해서 많은 KPOP 아이돌들이 즐겨 마신다고 한다"},
+    "ESFP" : {"name":"소주", "image": resultImgs[13] , "explanation" : "아직 5살인 수하의 침대 밑에 어떻게 들어오게 되었는지 의문인 수하쿠아. 빨간 뚜껑이라 더 주의가 필요하다"},
     "INFP" : {"name":"고로쇠 수액", "image": resultImgs[14] , "explanation" : "몸에 좋은 고로쇠 수액을 담고 있는 수하쿠아. 특히 뼈 건강에 좋다고 한다. 자주 넘어지고 뭐 뿌수고 떨어뜨리는 수하가 걱정되어 스스로 찾아온 기특한 수하쿠아"},
     "ISFP" : {"name":"온천수", "image": resultImgs[15] , "explanation" : "물병 안에 계란을 넣으면 온센타마고가 된다. 어느 온천수냐에 따라 효능과 효험이 다르다. 식용은 안되니 주의가 필요하다"}
 }
