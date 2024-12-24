@@ -1,7 +1,8 @@
 import styled from "styled-components";
 import { useNavigate, useLocation } from "react-router-dom";
 import { results, MBTI } from "../assets/types";
-import React from "react";
+import LoadingScreen from "../Components/LoadingScreen";
+import React, {useState,useEffect} from "react";
 
 const Container = styled.div`
     display:flex;
@@ -19,15 +20,14 @@ const BoxItem = styled.div`
 `
 
 const Image = styled.img`
-    width: 300px;
+    width: 250px;
     @media (max-width: 576px) {
-        width: 200px;
+        width: 150px;
     }
 `
 
 const Name = styled.span`
     font-size: 1.75rem;
-    margin-bottom: 25px;
 
     @media (max-width: 576px) {
         font-size: 1.25rem;
@@ -70,6 +70,7 @@ function ResultPage(){
     const navigate = useNavigate();
     const location = useLocation();
     const testData = location.state;
+    const [isLoading, setIsLoading] = useState<boolean>(true);
 
     const EI = testData.EI > 0 ? "E" : "I"; //양수거나 음수
     const NS = testData.NS > 0 ? "N" : "S";
@@ -91,14 +92,25 @@ function ResultPage(){
         window.open(`https://twitter.com/intent/tweet?text=${text}&url=${url}`);
     }
 
+     // useEffect로 상태 변경 후 작업 처리
+     useEffect(() => {
+        setTimeout(()=>setIsLoading(false), 3000);
+    }, []); // isLoading이 변경될 때마다 실행
+
     return(
         <Container>
-            <ResultBox>
+            {
+                isLoading ? (
+                    <LoadingScreen />
+                ) :
+                (
+                    <>
+                    <ResultBox>
                 <BoxItem>
                     <Image src={results[result].image}></Image>
                 </BoxItem>
 
-                <BoxItem>
+                <BoxItem style={{display: "flex", flexDirection:"column", gap:"20px"}}>
                     <Name>{results[result].name}</Name>
                     <Explanation>
                     {results[result].explanation.split(".").map((sentence, index) => (
@@ -116,6 +128,9 @@ function ResultPage(){
                 <Button className="twitter-share-button" onClick={shareTwitter}>트위터에 공유하기</Button>
                 <Button onClick={goToReview}>개발 후기</Button>
             </ButtonGroup>
+                    </>
+                )
+            }
         </Container>
     );
 }

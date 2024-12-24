@@ -16,15 +16,6 @@ export const GlobalStyle = createGlobalStyle`
     }
 `;
 
-export const Wrapper = styled.div` 
-    width: 100%;
-    height: 100vh;
-    display: flex;
-    justify-content: space-evenly;
-    flex-direction: column;
-    align-items: center;
-`;
-
 export const EventButton = styled.button`
     width: 200px;
     padding: 10px 20px;

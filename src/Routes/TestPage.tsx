@@ -2,19 +2,29 @@ import styled from "styled-components";
 import { useNavigate } from "react-router-dom";
 import { questions, QuestionType } from "../assets/types";
 import { useState } from "react";
-import { Wrapper, EventButton } from "../assets/styles";
 
 const Form = styled.form`
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between
     text-align: center;
 `
 
-const Question = styled.span`
+const Question = styled.p`
     font-size: 1.5rem;
-
+    text-align: center;
     @media (max-width: 576px) {
         font-size: 1.25rem;
     }
-`;
+`
+
+const QuestionNumber = styled.p`
+    font-size: 1.25rem;
+    text-align: center;
+    @media (max-width: 576px) {
+        font-size: 1.25rem;
+    }
+`
 
 const AnswerInput = styled.input`
     display: none;
@@ -27,7 +37,7 @@ const AnswerLabel = styled.label`
     border-radius: 10px;
     font-size: 1.25em;
 
-    &:hover {
+    &:focus {
         background-color: lightgray;
         cursor: pointer;
     }
@@ -86,19 +96,18 @@ function TestPage(){ //여기서 계속 변하는 건 index와 mbti 클릭할 �
         //그리고 index 처리
         if(index < 11) setIndex( (index) => index + 1 ); //마지막 페이지가 아니면
         console.log("updateMBTI, mbti, index" + mbti + index);
-    }
 
-    const sendMBTI = (e:React.FormEvent<HTMLFormElement>) => {
-        console.log("sendMBTI" + mbti);
-        e.preventDefault();
-        navigate("/result", {state:mbti});
+        if(index === 11) navigate("/result", {state:mbti});
     }
 
     return(
-        <Wrapper>
-            <Form onSubmit={sendMBTI} method="get">
-                <Question>{questions[index].id} / 12 <br />{questions[index].text}</Question>
-                <div>
+            <Form id="mbtiForm" method="get">
+               <BoxItem>
+                    <QuestionNumber>{questions[index].id} / 12</QuestionNumber>
+                    <Question>{questions[index].text}</Question>
+                </BoxItem>
+
+                <BoxItem>
                 {
                     questions[index].options.map((option,i)=> (
                             <BoxItem>
@@ -108,11 +117,8 @@ function TestPage(){ //여기서 계속 변하는 건 index와 mbti 클릭할 �
                             </BoxItem>
                     ))
                 }
-                </div>
-                
-                { (index == 11) ? <EventButton type="submit">결과 보기</EventButton> : null}
+                </BoxItem>
             </Form>
-        </Wrapper>
     );
 }
 

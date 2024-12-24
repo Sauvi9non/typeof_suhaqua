@@ -1,6 +1,8 @@
 import styled from "styled-components";
 import { useNavigate } from "react-router-dom";
 import typeof_suhaqua from "../assets/img/typeof_suhaqua.png";
+import { useEffect, useState } from "react";
+import LoadingScreen from "../Components/LoadingScreen";
 
 const MainImg = styled.img`
     width: 200px;
@@ -48,21 +50,36 @@ const BoxItem = styled.div`
 
 function Main() {
     const navigate = useNavigate();
+    const [isLoading, setIsLoading] = useState<boolean>(true);
     const testStart = () => {
         navigate("/typeof_suhaqua");
     }
 
+
+    // useEffect로 상태 변경 후 작업 처리
+    useEffect(() => {
+        setTimeout(()=>setIsLoading(false), 3000);
+    }, []); // isLoading이 변경될 때마다 실행
+
     return(
             <Container>
-                <BoxItem>
-                    <Title>너는 어떤 수하쿠아니?</Title>
-                </BoxItem>
-                <BoxItem>
-                    <MainImg src={typeof_suhaqua} alt="Suhaqua with Alien Sunglasses"></MainImg>
-                </BoxItem>
-                <BoxItem>
-                    <Button onClick={testStart}>시작</Button>                    
-                </BoxItem>
+                {
+                    isLoading ? (
+                        <LoadingScreen />
+                    ) : (
+                        <>
+                        <BoxItem>
+                            <Title>너는 어떤 수하쿠아니?</Title>
+                        </BoxItem>
+                        <BoxItem>
+                            <MainImg src={typeof_suhaqua} alt="Suhaqua with Alien Sunglasses"></MainImg>
+                        </BoxItem>
+                        <BoxItem>
+                            <Button onClick={testStart}>시작</Button>                    
+                        </BoxItem>
+                        </>
+                    )
+                }
             </Container>
     );
 }
