@@ -48,16 +48,24 @@ export type Answer = {
 export const questions: Question[] = [
     {
         "id" : 1,
-        "text" : "수하 침대 밑에는 어쩌다가 오게 되었어?",
+        "text" : "수하 침대 밑에는 어쩌다가 오게 되었어?", //정체
         "type" : QuestionType.ns,
         "options" : [
             {
-                "text" : "수하가 쿠팡에서 시켰어",
+                "text" : "수하가 쿠팡에서 시켜서/배달 트럭 타고 왔어",
                 "type" : AnswerType.s
             },
             {
-                "text" : "밖에서 몰래 사사삭하고 ",
+                "text" : "밖에서 몰래 사사삭하고 왔어",
                 "type" : AnswerType.n
+            },
+            {
+                "text" : "버츄얼 세계의 신비로운 힘이/날 여기로 인도했지...",
+                "type" : AnswerType.n
+            },
+            {
+                "text" : "온 게 아니야./내가 여기 먼저 살고 있었어",
+                "type" : AnswerType.s
             }
         ]
     },
@@ -126,7 +134,7 @@ export const questions: Question[] = [
                 "type" : AnswerType.e
             },
             {
-                "text" : "미안...나 사실 옆에서 딴 짓 많이 해...",
+                "text" : "미안.../나 사실 옆에서 딴 짓 많이 해...",
                 "type" : AnswerType.i
             }
         ]
@@ -148,15 +156,15 @@ export const questions: Question[] = [
     },
     {
         "id" : 6,
-        "text" : "수하가 집을 오래 비우게 되어서 미안하다고 한다.",
+        "text" : "수하가 집을 오래 비우게 되어서/미안하다고 한다.",
         "type" : QuestionType.tf,
         "options" : [
             {
-                "text" : "괜찮아 우리 걱정은 말구 조심히 잘 갔다와!",
+                "text" : "괜찮아 우리 걱정은 말구/조심히 잘 갔다와!",
                 "type" : AnswerType.f
             },
             {
-                "text" : "미안하면 올 때 고양ㅇ...가 아니라 메로나! ^^7",
+                "text" : "미안하면 올 때 고양ㅇ...가/아니라 메로나! ^^7",
                 "type" : AnswerType.t
             },
         ]
@@ -193,76 +201,68 @@ export const questions: Question[] = [
     },
     {
         "id" : 9,
-        "text" : "오랜만에 지난 방송들을 돌려보니 어쩐지 많은 생각들이 떠오른다",
+        "text" : "오랜만에 지난 방송들을 돌려보니/과거의 발언이 하나 걸린다. 여러분들은! ~~~~~",
         "type" : QuestionType.ns,
         "options" : [
             {
-                "text" : "우리들은 지금 어디를 향해 가고 있는 걸까?",
+                "text" : "그런데 우리만 불멸이면 뭐해/수하는 불멸이 아니잖아8ㅅ8",
                 "type" : AnswerType.n
             },
             {
-                "text" : "글쎄 나는 부둣가에 가서 새우깡이나 좀 얻어 먹으려고",
-                "type" : AnswerType.s
-            },
-            {
-                "text" : "내 말은 그게 아니라~ 먼 미래에서 생각했을 때 이 상황은 어떤 결과로 이어지는 걸까? 이 길의 끝은 어디지?",
-                "type" : AnswerType.n
-            },
-            {
-                "text" : "난 그래도 부둣가에 가서 새우깡 좀 얻어 먹어야 한다고 생각해",
+                "text" : "저 때 수하 정말 쩔었지...",
                 "type" : AnswerType.s
             }
         ]
     },
     {
         "id" : 10,
-        "text" : "일정 중에는 행운의 주황 양말 찾기도 있었다. 어디부터 둘러봐야 할까?",
+        "text" : "수하에게 새해 선물로 행운의 주황 양말을 찾아주고 싶다./어디부터 둘러봐야 할까?",
         "type" : QuestionType.pj,
         "options" : [
             {
-                "text" : "음...일단 가장 가까운 침대 밑부터 가볼까?",
+                "text" : "음...일단 가장 가까운/침대 밑부터 가볼까?",
                 "type" : AnswerType.p
             },
             {
-                "text" : "행운의 주황 양말도 양말! 좀 멀지만 옷장부터 가볼래!",
+                "text" : "행운의 주황 양말도 양말!/좀 멀지만 옷장부터 가볼래!",
                 "type" : AnswerType.j
             }
         ]
     },
     {
         "id" : 11,
-        "text" : "주황 양말을 들고 돌아가다가 그만 넘어져서 물이 쏟아지고 말았다.",
+        "text" : "주황 양말을 들고 돌아가다가 그만 넘어져서/물이 쏟아지고 말았다.",
         "type" : QuestionType.pj,
         "options" : [
             {
-                "text" : "어쩔 수 없다. 우선 주황 양말로 닦는다",
+                "text" : "어쩔 수 없다./우선 주황 양말로 닦는다",
                 "type" : AnswerType.p
             },
             {
-                "text" : "왜 뚜껑이 덜 닫혀있었지?! 예상치 못한 상황에 당황한다.",
+                "text" : "왜 뚜껑이 덜 닫혀있었지?!/예상치 못한 상황에 당황한다.",
                 "type" : AnswerType.j
             },
             {
-                "text" : "물이니까 증발하겠지...! 외면한다",
+                "text" : "물이니까 증발하겠지...!/외면한다",
                 "type" : AnswerType.p
             },
             {
-                "text" : "쏟아진 물을 다시 담는 법을 배워두길 잘했어...노련하게 상황을 수습한다",
+                "text" : "쏟아진 물을 다시 담는 법을 배워두길 잘했어.../노련하게 상황을 수습한다",
                 "type" : AnswerType.j
             }
         ]
     },
     {
         "id" : 12,
-        "text" : "곧 있으면 수하가 돌아올 시간! 문앞에 마중 나가있을 때 드는 생각은?",
+        "text" : "곧 있으면 수하가 돌아올 시간!/문앞에 마중 나가있을 때 드는 생각은?",
         "type" : QuestionType.ns,
         "options" : [
             {
-                "text" : "'수하 온닿ㅎㅎ 우리 기념품 사왔겠지?'",
+                "text" : "'수하 온닿ㅎㅎ/우리 기념품 사왔겠지?'",
                 "type" : AnswerType.s
             },
             {
-                "text" : "'...설마 수하 우리 못 보고 실수로 밟지는 않겠지?'",
+                "text" : "'...설마 수하 우리 못 보고/실수로 밟지는 않겠지?'",
                 "type" : AnswerType.n
             }
         ]
@@ -278,25 +278,25 @@ const resultImgs = [
 ];
 
 export const results = {
-    "ENTJ" : {"name":"프랑스 빙하수", "image": resultImgs[0], "explanation": "온통 흑백인 광공하우스에서 탈출했다. 빙하가 녹아 생긴 수하쿠아이기에 미네랄이 풍부하다"},
+    "ENTJ" : {"name":"프랑스 빙하수", "image": resultImgs[0], "explanation": "온통 흑백인 광공하우스에서 탈출했다./빙하가 녹아 생긴 수하쿠아이기에 미네랄이 풍부하다"},
     "ESTJ" : {"name":"깐깐한 물", "image": resultImgs[1] , "explanation": "깐깐한 정수기에서 나온 깐깐한 물을 가진 수하쿠아."},
-    "INTJ" : {"name":"정제수", "image": resultImgs[2] , "explanation" : "모든 미네랄과 불순물이 걸러진 순수한 수하쿠아. 하지만 광기 100%도 순수라는 걸 잊지말자"},
-    "ISTJ" : {"name":"물약", "image": resultImgs[3] , "explanation" : "잔병치레가 잦은 수하가 걱정되어 찾아온 수하쿠아. 하지만 이 물약 수하쿠아가 딸기약일지 호박약일지는 아무도 모른다고 한다. (어쩌면 민트초코맛일지도)"},
+    "INTJ" : {"name":"정제수", "image": resultImgs[2] , "explanation" : "모든 미네랄과 불순물이 걸러진 순수한 수하쿠아./하지만 광기 100%도 순수라는 걸 잊지말자"},
+    "ISTJ" : {"name":"물약", "image": resultImgs[3] , "explanation" : "잔병치레가 잦은 수하가 걱정되어 찾아온 수하쿠아./하지만 이 물약 수하쿠아가 딸기약일지 호박약일지는/아무도 모른다고 한다. (어쩌면 민트초코맛일지도)"},
 
-    "ENTP" : {"name":"토닉 워터", "image": resultImgs[4] , "explanation" : "알코올이 함유된 수하쿠아랑 궁합이 좋다. 사이다랑 비교가 되어 슬프다고 하는 듯. 탄산이 들어있어서 마구 흔들면 마실 때. 뚜껑이 날아갈 수 있으니 조심해야 한다"},
-    "ESTP" : {"name":"약수", "image": resultImgs[5] , "explanation" : "약수터의 마스코트였던 수하쿠아. 구수한 말투에 넉살이 좋다. 몸에 좋은 각종 미네랄을 함유하고 있다"},
-    "INTP" : {"name":"해양심층수", "image": resultImgs[6] , "explanation" : "기본적으로 바닷물이라 짠맛이 나지만. 특별한 처리를 했기 때문에 식수로도 음용이 가능하다"},
-    "ISTP" : {"name":"녹차", "image": resultImgs[7] , "explanation" : "찻잎이 우러난 수하쿠아. 어떤 찻잎을 넣느냐에 따라 갈색이 되기도 한다"},
+    "ENTP" : {"name":"토닉 워터", "image": resultImgs[4] , "explanation" : "알코올이 함유된 수하쿠아랑 궁합이 좋다./사이다랑 비교가 되어 슬프다고 하는 듯./탄산이 들어있어서 마구 흔들면 마실 때./뚜껑이 날아갈 수 있으니 조심해야 한다"},
+    "ESTP" : {"name":"약수", "image": resultImgs[5] , "explanation" : "약수터의 마스코트였던 수하쿠아./구수한 말투에 넉살이 좋다./몸에 좋은 각종 미네랄을 함유하고 있다"},
+    "INTP" : {"name":"해양심층수", "image": resultImgs[6] , "explanation" : "기본적으로 바닷물이라 짠맛이 나지만./특별한 처리를 했기 때문에 식수로도 음용이 가능하다"},
+    "ISTP" : {"name":"녹차", "image": resultImgs[7] , "explanation" : "찻잎이 우러난 수하쿠아./어떤 찻잎을 넣느냐에 따라 갈색이 되기도 한다"},
 
-    "ENFJ" : {"name":"코코넛 워터", "image": resultImgs[8] , "explanation" : "머리에 코코넛을 쓰고 있는 수하쿠아. 침대 밑에서 몰래 댄스파티를 벌이는 주범. 내용물은 호불호가 갈리는 맛이지만 호불호 없이 귀엽다"},
-    "ESFJ" : {"name":"볶은 커피콩을 우린 물", "image": resultImgs[9] , "explanation" : "카페인을 많이 함유하고 있는 수하쿠아. 종류에 따라서는 우유나 설탕을 함유하기도 한다. 너무 많이 마시면 밤에 잠이 안올수 있지만. 이 수하쿠아는 그냥 커피가 아니기에 괜찮다고 한다"},
-    "INFJ" : {"name":"성수", "image": resultImgs[10] , "explanation" : "본래는 그냥 평범한 소금물이었지만 축성을 받아 성수가 되었다. 기본적으로 온화하다. 하지만 이 수하쿠아는 실눈캐라는 걸 잊지 마시길"},
-    "ISFJ" : {"name":"델몬트 보리차", "image": resultImgs[11] , "explanation" : "원래는 오렌지 주스를 담고 있었지만 지금은 각 한국 가정집에 보급되어 보리차를 담고 있는 수하쿠아. 튼튼하고 넉넉한 용량만큼 유한 성격을 가지고 있다"},
+    "ENFJ" : {"name":"코코넛 워터", "image": resultImgs[8] , "explanation" : "머리에 코코넛을 쓰고 있는 수하쿠아./침대 밑에서 몰래 댄스파티를 벌이는 주범./내용물은 호불호가 갈리는 맛이지만 호불호 없이 귀엽다"},
+    "ESFJ" : {"name":"볶은 커피콩을 우린 물", "image": resultImgs[9] , "explanation" : "카페인을 많이 함유하고 있는 수하쿠아./종류에 따라서는 우유나 설탕을 함유하기도 한다./너무 많이 마시면 밤에 잠이 안올수 있지만./이 수하쿠아는 그냥 커피가 아니기에 괜찮다고 한다"},
+    "INFJ" : {"name":"성수", "image": resultImgs[10] , "explanation" : "본래는 그냥 평범한 소금물이었지만 축성을 받아 성수가 되었다./기본적으로 온화하다./하지만 이 수하쿠아는 실눈캐라는 걸 잊지 마시길"},
+    "ISFJ" : {"name":"델몬트 보리차", "image": resultImgs[11] , "explanation" : "원래는 오렌지 주스를 담고 있었지만/지금은 각 한국 가정집에 보급되어/보리차를 담고 있는 수하쿠아./튼튼하고 넉넉한 용량만큼 유한 성격을 가지고 있다"},
 
-    "ENFP" : {"name":"아이돌물", "image": resultImgs[12] , "explanation" : "기본 수하쿠아에 녹차 티백, 레몬즙과 설탕이 들어간 수하쿠아. 붓기제거에 좋다고 해서 많은 KPOP 아이돌들이 즐겨 마신다고 한다"},
-    "ESFP" : {"name":"소주", "image": resultImgs[13] , "explanation" : "아직 5살인 수하의 침대 밑에 어떻게 들어오게 되었는지 의문인 수하쿠아. 빨간 뚜껑이라 더 주의가 필요하다"},
-    "INFP" : {"name":"고로쇠 수액", "image": resultImgs[14] , "explanation" : "몸에 좋은 고로쇠 수액을 담고 있는 수하쿠아. 특히 뼈 건강에 좋다고 한다. 자주 넘어지고 뭐 뿌수고 떨어뜨리는 수하가 걱정되어 스스로 찾아온 기특한 수하쿠아"},
-    "ISFP" : {"name":"온천수", "image": resultImgs[15] , "explanation" : "물병 안에 계란을 넣으면 온센타마고가 된다. 어느 온천수냐에 따라 효능과 효험이 다르다. 식용은 안되니 주의가 필요하다"}
+    "ENFP" : {"name":"아이돌물", "image": resultImgs[12] , "explanation" : "기본 수하쿠아에 녹차 티백, 레몬즙과 설탕이 들어간 수하쿠아./붓기제거에 좋다고 해서 많은 KPOP 아이돌들이 즐겨 마신다고 한다"},
+    "ESFP" : {"name":"소주", "image": resultImgs[13] , "explanation" : "아직 5살인 수하의 침대 밑에 어떻게 들어오게 되었는지/의문인 수하쿠아. 빨간 뚜껑이라 더 주의가 필요하다"},
+    "INFP" : {"name":"고로쇠 수액", "image": resultImgs[14] , "explanation" : "몸에 좋은 고로쇠 수액을 담고 있는 수하쿠아./특히 뼈 건강에 좋다고 한다./자주 넘어지고 뭐 뿌수고 떨어뜨리는 수하가 걱정되어/스스로 찾아온 기특한 수하쿠아"},
+    "ISFP" : {"name":"온천수", "image": resultImgs[15] , "explanation" : "물병 안에 계란을 넣으면 온센타마고가 된다./어느 온천수냐에 따라 효능과 효험이 다르다./식용은 안되니 주의가 필요하다"}
 }
 
 export type MBTI =
