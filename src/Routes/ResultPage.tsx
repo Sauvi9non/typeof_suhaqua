@@ -107,7 +107,7 @@ function ResultPage(){
     }
 
     const shareTwitter = () => {
-        const text = `${results[result].name} ${results[result].explanation}`
+        const text = `나는 ${results[result].name} 속성의 수하쿠아`
         const url = `https://typeof-suhaqua.web.app`;
         window.open(`https://twitter.com/intent/tweet?text=${text}&url=${url}`);
     }
