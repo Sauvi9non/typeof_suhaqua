@@ -35,7 +35,7 @@ const ButtonGroup = styled.div`
     grid-template-columns: 4fr 1fr;
     grid-gap: 1rem;
     padding: 1rem;
-    background-color: black;
+    background-color: #222222;
     border-radius: 20px;
     height: 50px;
 `
@@ -44,12 +44,14 @@ const Button = styled.button`
     width: 100%;
     font-size: 1.25rem;
     border-radius: 10px;
-    border : 2px solid black;
-    background-color: white;
+    border : 2px solid white;
+    background-color: #222222;
+    color: white;
 
     &:hover {
         cursor: pointer;
-        background-color: #A5C8FF;
+        border : 2px solid gray;
+        color: gray;
     }
 `
 
