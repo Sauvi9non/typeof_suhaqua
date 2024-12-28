@@ -2,7 +2,7 @@ import styled from "styled-components";
 import { useNavigate, useLocation } from "react-router-dom";
 import { results, MBTI } from "../assets/types";
 import LoadingScreen from "../Components/LoadingScreen";
-import React, {useState,useEffect} from "react";
+import React, {useState, useEffect} from "react";
 import { Container, Item } from "../assets/styles";
 import ScoreBar from "../Components/ScoreBar";
 
@@ -116,10 +116,10 @@ function ResultPage(){
 
     }
 
-     // useEffect로 상태 변경 후 작업 처리
-     useEffect(() => {
-        setTimeout(()=>setIsLoading(false), 3000);
-    }, []); // isLoading이 변경될 때마다 실행
+// useEffect로 상태 변경 후 작업 처리
+    useEffect(() => {
+     setTimeout(()=>setIsLoading(false), 3000);
+ }, []); // isLoading이 변경될 때마다 실행
 
     return(
         <Container>
@@ -151,7 +151,7 @@ function ResultPage(){
 
                 <ResultBox>
                     <ScoreBar score={testData.EI} leftName="활발한" rightName="수줍은" />
-                    <ScoreBar score={testData.NS} leftName="몽상적" rightName="현실적" />
+                    <ScoreBar score={testData.NS} leftName="현실적" rightName="몽상적" />
                     <ScoreBar score={testData.TF} leftName="쿨한" rightName="정이많은" />
                     <ScoreBar score={testData.PJ} leftName="즉흥적" rightName="철저한" />
                 </ResultBox>

@@ -18,7 +18,7 @@ export const GlobalStyle = createGlobalStyle`
 
 export const Container = styled.div`
     width: 500px;
-    height: 100;
+    height: 100%;
     background-color: #5597FF;
     padding: 4rem 2rem;
 `
