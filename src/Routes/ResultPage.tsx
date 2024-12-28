@@ -6,6 +6,15 @@ import React, {useState,useEffect} from "react";
 import { Container, Item } from "../assets/styles";
 import ScoreBar from "../Components/ScoreBar";
 
+const TitleWrapper = styled.div`
+    text-align: center;
+`
+const Title = styled.span`
+    font-size: 2rem;
+    font-weight: 400;
+    color: white;
+`
+
 const ExplanationBox = styled.div`
     width: 360px;
     padding: 2rem;
@@ -120,6 +129,9 @@ function ResultPage(){
                 ) :
                 (
                     <>
+                <TitleWrapper>
+                    <Title>수하쿠아 분석 결과</Title>
+                </TitleWrapper>
 
                 <Item>
                     <Image src={results[result].image}></Image>
@@ -146,7 +158,6 @@ function ResultPage(){
 
                 <Item>
                     <GoToButton onClick={openModal}>다른 수하쿠아 보러가기</GoToButton>
-                    
                 </Item>
 
                 <ButtonGroup>
