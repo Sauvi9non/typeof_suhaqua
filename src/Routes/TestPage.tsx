@@ -2,28 +2,38 @@ import styled from "styled-components";
 import { useNavigate } from "react-router-dom";
 import { questions, QuestionType } from "../assets/types";
 import { useState } from "react";
+import { Container } from "../assets/styles";
+import React from "react";
+import ProgressBar from "../Components/ProgressBar";
 
-const Form = styled.form`
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between
+const QuestionBox = styled.div`
+    width: 400px;
+    height: 72px;
+    padding: 2rem;
+    margin: 100px auto;
     text-align: center;
-`
-
+    background-color: #A5C8FF;
+    border-radius: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+`;
 const Question = styled.p`
     font-size: 1.5rem;
-    text-align: center;
-    @media (max-width: 576px) {
-        font-size: 1.25rem;
-    }
+    color: black;
 `
 
-const QuestionNumber = styled.p`
-    font-size: 1.25rem;
-    text-align: center;
-    @media (max-width: 576px) {
-        font-size: 1.25rem;
-    }
+const AnswerBox = styled.div`
+    width: 400px;
+    height: 440px;
+    padding: 2rem 1rem;
+    background-color: white;
+    border-radius: 20px;
+    display: grid;
+    grid-gap: 2rem;
+    grid-template-rows: repeat(auto-fill, 1fr);
+    grid-auto-rows: 1fr;
+    place-items: center;
 `
 
 const AnswerInput = styled.input`
@@ -31,26 +41,37 @@ const AnswerInput = styled.input`
 `
 
 const AnswerLabel = styled.label`
-    width: 100%;
-    color: black;
+    height: 100%;
+    width: 360px;
     padding: 10px 20px;
     border-radius: 10px;
-    font-size: 1.25em;
 
-    &:focus {
-        background-color: lightgray;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-size: 1.25rem;
+    background-color: #A5C8FF;
+    color: white;
+
+    &:hover {
         cursor: pointer;
+        background-color: #E0E0E0;
+        color: #0063FF;
     }
-
-    @media (max-width: 576px) {
-        font-size: 1rem;
-    } 
+    
+    &:focus {
+        cursor: pointer;
+        background-color: #E0E0E0;
+        color: #0063FF;
+    }
 `;
 
-const BoxItem = styled.div`
-    padding: 20px;
-    margin: 10px 0px;
+const AnswerText = styled.p`
+    text-align: center;
 `
+
+
 
 function TestPage(){ //여기서 계속 변하는 건 index와 mbti 클릭할 때 마다 바뀌면 계속해서 리렌더링이 일어난다.
     const [index, setIndex] = useState<number>(0); // 0 ~ 11
@@ -101,24 +122,38 @@ function TestPage(){ //여기서 계속 변하는 건 index와 mbti 클릭할 �
     }
 
     return(
-            <Form id="mbtiForm" method="get">
-               <BoxItem>
-                    <QuestionNumber>{questions[index].id} / 12</QuestionNumber>
-                    <Question>{questions[index].text}</Question>
-                </BoxItem>
+        <Container>
+                <ProgressBar progress={(index+1)}></ProgressBar>
+                    <QuestionBox>
+                        <Question>{
+                        questions[index].text.split("/").map((sentence,index)=>(
+                            <React.Fragment key={index}>
+                                {sentence}
+                            </React.Fragment>
+                        ))
+                        }</Question>
+                    </QuestionBox>
 
-                <BoxItem>
-                {
-                    questions[index].options.map((option,i)=> (
-                            <BoxItem>
-                            <AnswerLabel htmlFor={String(option.type)} key={i}>{option.text}
-                            <AnswerInput id={String(option.type)} type= "radio" value={option.type} onClick={updateMBTI}></AnswerInput>
-                            </AnswerLabel>
-                            </BoxItem>
-                    ))
-                }
-                </BoxItem>
-            </Form>
+                    <AnswerBox>
+                    {
+                        questions[index].options.map((option,i)=> (
+                                <AnswerLabel htmlFor={String(option.type)} key={i}>
+                                    <AnswerText>
+                                    {
+                                        option.text.split("/").map((sentence,index)=>(
+                                            <React.Fragment key={index}>
+                                                {sentence} <br/>
+                                            </React.Fragment>
+                                        ))
+                                    }
+                                    </AnswerText>
+                                <AnswerInput id={String(option.type)} type= "radio" value={option.type} onClick={updateMBTI}></AnswerInput>
+                                </AnswerLabel>
+                        ))
+                    }
+                    </AnswerBox>
+
+        </Container>
     );
 }
 
