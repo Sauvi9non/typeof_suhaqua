@@ -52,7 +52,7 @@ function ScoreBar({score, leftName, rightName}: ScoreBarProps){
     return(
 
         <BarWrapper>
-            <BarLabel>{leftName}</BarLabel>
+            <BarLabel style={{color: "#624CBA"}}>{leftName}</BarLabel>
             <Bar score={score}>
             {
                 ( score < 0 ) ?
@@ -61,12 +61,12 @@ function ScoreBar({score, leftName, rightName}: ScoreBarProps){
                     <Right style={{ width: `${(33*(3-absScore))}%`}}></Right>
                     </>
                 :   <>
-                    <Left style={{ width:`${(33*(3-absScore))}%`}}></Left>
-                    <Right style={{ width: `${33*absScore+1}%`}}></Right>
+                    <Left style={{ width:`${(33*(3-absScore))+1}%`}}></Left>
+                    <Right style={{ width: `${33*absScore}%`}}></Right>
                     </>
             }
         </Bar>
-            <BarLabel>{rightName}</BarLabel>
+            <BarLabel style={{color: "#2BADAB"}}>{rightName}</BarLabel>
         </BarWrapper>
 
     );

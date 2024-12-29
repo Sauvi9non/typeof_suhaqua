@@ -1,12 +1,15 @@
 import styled from "styled-components";
 
 const Bar = styled.div`
-    width: 480px;
+    width: 90%;
     height: 40px;
     border-radius: 50px;
     background-color: white;
     display: flex;
     align-items: center;
+    margin-top: 2rem;
+    margin-left: auto;
+    margin-right: auto;
 `;
 
 const Progress = styled.div<{progress: number}>`

@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { Container } from "../assets/styles";
 
 const Wrapper = styled.div`
     display:flex;
@@ -6,22 +7,25 @@ const Wrapper = styled.div`
     align-items:center;
     height:100vh;
 `
-const AnimatedText = styled.span`
-font-size: 2rem;
+const AnimatedText = styled.p`
+  font-size: 2rem;
   color: white;
   position: relative;
 
   &::after {
-    content: "수하쿠아 성분 분석 중.";
-    animation: fadeInText 1s steps(3) infinite;
+    content: "수하쿠아 성분 분석 중";
+    animation: fadeInText 3s steps(5) infinite;
   }
 
   @keyframes fadeInText {
     0% {
-      content: "수하쿠아 성분 분석 중.  ";
+      content: "수하쿠아 성분 분석 중";
     }
-    50% {
-      content: "수하쿠아 성분 분석 중.. ";
+    25% {
+      content: "수하쿠아 성분 분석 중.";
+    }
+    75% {
+      content: "수하쿠아 성분 분석 중..";
     }
     100% {
       content: "수하쿠아 성분 분석 중...";
@@ -32,10 +36,12 @@ font-size: 2rem;
 function LoadingScreen() {
 
     return(
+        <Container>
         <Wrapper>
             <AnimatedText>
             </AnimatedText>
         </Wrapper>
+        </Container>
     );
 }
 

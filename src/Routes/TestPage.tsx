@@ -7,26 +7,32 @@ import React from "react";
 import ProgressBar from "../Components/ProgressBar";
 
 const QuestionBox = styled.div`
-    width: 400px;
-    height: 72px;
-    padding: 2rem;
-    margin: 100px auto;
+    width: 80%;
+    height: 10%;
+    padding: 1rem;
+    margin: auto;
     text-align: center;
     background-color: #A5C8FF;
     border-radius: 25px;
+
     display: flex;
     justify-content: center;
     align-items: center;
 `;
 const Question = styled.p`
-    font-size: 1.5rem;
+    font-size: 1.25rem;
     color: black;
+
+    @media (max-width: 576px) {
+        font-size: 1.125rem;
+    }
 `
 
 const AnswerBox = styled.div`
-    width: 400px;
-    height: 440px;
+    width: 80%;
+    height: 50%;
     padding: 2rem 1rem;
+    margin: auto;
     background-color: white;
     border-radius: 20px;
     display: grid;
@@ -34,6 +40,8 @@ const AnswerBox = styled.div`
     grid-template-rows: repeat(auto-fill, 1fr);
     grid-auto-rows: 1fr;
     place-items: center;
+
+    transition: all 0.5s ease-in-out;
 `
 
 const AnswerInput = styled.input`
@@ -41,9 +49,9 @@ const AnswerInput = styled.input`
 `
 
 const AnswerLabel = styled.label`
-    height: 100%;
-    width: 360px;
-    padding: 10px 20px;
+    height: 80%;
+    width: 90%;
+    padding: 1rem;
     border-radius: 10px;
 
     display: flex;
@@ -54,16 +62,25 @@ const AnswerLabel = styled.label`
     background-color: #A5C8FF;
     color: white;
 
-    &:hover {
-        cursor: pointer;
-        background-color: #E0E0E0;
+    transition: all 0.5s ease-in-out;
+
+
+    &:active {
+        background-color: #5588FF;
         color: #0063FF;
+        cursor: pointer;
     }
-    
-    &:focus {
-        cursor: pointer;
-        background-color: #E0E0E0;
-        color: #0063FF;
+
+    @media (min-width: 576px) {
+        &:hover {
+            cursor: pointer;
+            background-color: #DDDDFF;
+            color: #0063FF;
+        }
+    }
+
+    @media (max-width: 576px) {
+        font-size: 1rem;
     }
 `;
 
@@ -124,11 +141,12 @@ function TestPage(){ //여기서 계속 변하는 건 index와 mbti 클릭할 �
     return(
         <Container>
                 <ProgressBar progress={(index+1)}></ProgressBar>
-                    <QuestionBox>
+
+                <QuestionBox>
                         <Question>{
                         questions[index].text.split("/").map((sentence,index)=>(
                             <React.Fragment key={index}>
-                                {sentence}
+                                {sentence} <br/>
                             </React.Fragment>
                         ))
                         }</Question>
@@ -152,7 +170,6 @@ function TestPage(){ //여기서 계속 변하는 건 index와 mbti 클릭할 �
                         ))
                     }
                     </AnswerBox>
-
         </Container>
     );
 }

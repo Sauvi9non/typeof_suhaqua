@@ -3,7 +3,7 @@ import { useNavigate, useLocation } from "react-router-dom";
 import { results, MBTI } from "../assets/types";
 import LoadingScreen from "../Components/LoadingScreen";
 import React, {useState, useEffect} from "react";
-import { Container, Item } from "../assets/styles";
+import { ResultContainer, Item } from "../assets/styles";
 import ScoreBar from "../Components/ScoreBar";
 
 const TitleWrapper = styled.div`
@@ -16,11 +16,11 @@ const Title = styled.span`
 `
 
 const ExplanationBox = styled.div`
-    width: 360px;
+    width: 75%;
     padding: 2rem;
     margin: 2rem auto;
     background-color: white;
-    border-radius: 50px;
+    border-radius: 25px;
     color: #5597FF;
     text-align: start;
 `
@@ -32,11 +32,13 @@ const Image = styled.img`
 
 const Name = styled.span`
     font-size: 1.75rem;
+    color: #0063FF;
 `
 
 const Explanation = styled.pre`
     word-break: break-word;
     font-size: 1rem;
+    margin-top: 0.5rem;
 `
 
 const ButtonGroup = styled.div`
@@ -45,7 +47,6 @@ const ButtonGroup = styled.div`
     grid-gap: 1rem;
     padding: 1rem;
     background-color: #222222;
-    border-radius: 20px;
     height: 50px;
 `
 
@@ -56,6 +57,7 @@ const Button = styled.button`
     border : 2px solid white;
     background-color: #222222;
     color: white;
+    transition: all 0.5s ease-in-out;
 
     &:hover {
         cursor: pointer;
@@ -65,10 +67,10 @@ const Button = styled.button`
 `
 
 const ResultBox = styled.div`
-    padding: 2rem;
-    margin: 2rem auto;
+    padding: 1rem;
+    margin: 2rem 1rem;
     background-color: white;
-    border-radius: 50px;
+    border-radius: 25px;
     color: #5597FF;
     text-align: start;
 `
@@ -81,6 +83,7 @@ const GoToButton = styled.button`
     background-color: #A5C8FF;
     width: 90%;
     color: white;
+    transition: all 0.5s ease-in-out;
 
     &:hover {
         cursor: pointer;
@@ -122,7 +125,7 @@ function ResultPage(){
  }, []); // isLoading이 변경될 때마다 실행
 
     return(
-        <Container>
+        <ResultContainer>
             {
                 isLoading ? (
                     <LoadingScreen />
@@ -151,7 +154,7 @@ function ResultPage(){
 
                 <ResultBox>
                     <ScoreBar score={testData.EI} leftName="활발한" rightName="수줍은" />
-                    <ScoreBar score={testData.NS} leftName="현실적" rightName="몽상적" />
+                    <ScoreBar score={testData.NS} leftName="현실적" rightName="창의적" />
                     <ScoreBar score={testData.TF} leftName="쿨한" rightName="정이많은" />
                     <ScoreBar score={testData.PJ} leftName="즉흥적" rightName="철저한" />
                 </ResultBox>
@@ -169,7 +172,7 @@ function ResultPage(){
                 )
             }
                 
-            </Container>
+            </ResultContainer>
         
     );
 }
