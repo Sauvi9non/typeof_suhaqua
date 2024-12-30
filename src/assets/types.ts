@@ -294,7 +294,7 @@ export const questions: Question[] = [
 
 ]
 
-const resultImgs = [
+export const resultImgs = [
     evian,    precisionist,    purifiedWater,    coughSyrup,
     tonicWater,    springWater,    deepOceanWater,    greenTea,
     coconutWater,    coffee,    holyWater,    glassJar,
@@ -315,7 +315,7 @@ export const results = {
     "ENFJ" : {"name":"코코넛 워터", "image": resultImgs[8] , "explanation" : "머리에 코코넛을 쓰고 있는 수하쿠아./침대 밑에서 몰래 댄스파티를 벌이는 주범./내용물은 호불호가 갈리는 맛이지만 호불호 없이 귀엽다."},
     "ESFJ" : {"name":"볶은 커피콩을 우린 물", "image": resultImgs[9] , "explanation" : "카페인을 많이 함유하고 있는 수하쿠아./종류에 따라서는 우유나 설탕을 함유하기도 한다./너무 많이 마시면 밤에 잠이 안올수 있지만,/이 수하쿠아는 그냥 커피가 아니기에 괜찮다고 한다"},
     "INFJ" : {"name":"성수", "image": resultImgs[10] , "explanation" : "본래는 그냥 평범한 소금물이었지만 축성을 받아 성수가 되었다./기본적으로 온화하다./하지만 이 수하쿠아는 실눈캐라는 걸 잊지 말자."},
-    "ISFJ" : {"name":"델몬X 보리차", "image": resultImgs[11] , "explanation" : "원래는 오렌지 주스를 담고 있었지만/지금은 각 한국 가정집에 보급되어 보리차를 담고 있는 수하쿠아./튼튼하고 넉넉한 용량만큼 유한 성격을 가지고 있다"},
+    "ISFJ" : {"name":"델X트 보리차", "image": resultImgs[11] , "explanation" : "원래는 오렌지 주스를 담고 있었지만/지금은 각 한국 가정집에 보급되어/보리차를 담고 있는 수하쿠아./튼튼하고 넉넉한 용량만큼 유한 성격을 가지고 있다"},
 
     "ENFP" : {"name":"아이돌물", "image": resultImgs[12] , "explanation" : "기본 수하쿠아에 녹차 티백, 레몬즙과 설탕이 들어간 수하쿠아./붓기제거에 좋다고 해서 많은 KPOP 아이돌들이 즐겨 마신다고 한다."},
     "ESFP" : {"name":"소주", "image": resultImgs[13] , "explanation" : "아직 5살인 수하의 침대 밑에 어떻게 오게 되었는지 의문인 수하쿠아./빨간 뚜껑이라 더 주의가 필요하다."},
