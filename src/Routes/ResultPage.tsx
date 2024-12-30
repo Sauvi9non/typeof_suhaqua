@@ -17,7 +17,7 @@ const Title = styled.span`
 
 const ExplanationBox = styled.div`
     width: 75%;
-    padding: 2rem;
+    padding: 1.25rem;
     margin: 2rem auto;
     background-color: white;
     border-radius: 25px;
@@ -31,14 +31,13 @@ const Image = styled.img`
 `
 
 const Name = styled.span`
-    font-size: 1.75rem;
+    font-size: 1.25rem;
     color: #0063FF;
 `
 
-const Explanation = styled.pre`
+const Explanation = styled.p`
     word-break: break-word;
     font-size: 1rem;
-    margin-top: 0.5rem;
 `
 
 const ButtonGroup = styled.div`
@@ -64,6 +63,10 @@ const Button = styled.button`
         border : 2px solid gray;
         color: gray;
     }
+
+    @media (max-width: 576px){
+        font-size: 1rem;
+    }
 `
 
 const ResultBox = styled.div`
@@ -73,23 +76,6 @@ const ResultBox = styled.div`
     border-radius: 25px;
     color: #5597FF;
     text-align: start;
-`
-
-const GoToButton = styled.button`
-    padding: 1rem 2rem;
-    font-size: 1.5rem;
-    border-radius: 25px;
-    border : none;
-    background-color: #A5C8FF;
-    width: 90%;
-    color: white;
-    transition: all 0.5s ease-in-out;
-
-    &:hover {
-        cursor: pointer;
-        background-color: #E0E0E0;
-        color: #0063FF;
-    }
 `
 
 function ResultPage(){
@@ -110,13 +96,9 @@ function ResultPage(){
     }
 
     const shareTwitter = () => {
-        const text = `나는 ${results[result].name} 속성의 수하쿠아`
+        const text = `나는 ${results[result].name} 속성의 수하쿠아😎`;
         const url = `https://typeof-suhaqua.web.app`;
         window.open(`https://twitter.com/intent/tweet?text=${text}&url=${url}`);
-    }
-
-    const openModal = () => {
-
     }
 
 // useEffect로 상태 변경 후 작업 처리
@@ -158,10 +140,6 @@ function ResultPage(){
                     <ScoreBar score={testData.TF} leftName="쿨한" rightName="정이많은" />
                     <ScoreBar score={testData.PJ} leftName="즉흥적" rightName="철저한" />
                 </ResultBox>
-
-                <Item>
-                    <GoToButton onClick={openModal}>다른 수하쿠아 보러가기</GoToButton>
-                </Item>
 
                 <ButtonGroup>
                 <Button className="twitter-share-button" onClick={shareTwitter}>트위터에 결과공유하기</Button>

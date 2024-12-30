@@ -9,6 +9,11 @@ const BarWrapper = styled.div`
 
 const BarLabel = styled.span`
     margin: 0;
+    font-size: 1rem;
+
+    @media (max-width: 576px){
+        font-size: 0.75rem;
+    }
 `
 
 const Bar = styled.div<{score: number}>`
@@ -21,6 +26,10 @@ const Bar = styled.div<{score: number}>`
     justify-content: center;
     overflow: hidden;
     transition: width 1.0s ease;
+
+    @media (max-width: 576px){
+        width: 270px;
+    }
 `;
 
 const Left = styled.div`
